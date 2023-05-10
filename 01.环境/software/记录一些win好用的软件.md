@@ -1,0 +1,25 @@
+- fluent search
+	- 真的很OK alt+m显示全屏可点击的功能太牛了
+	- 简单来说就是 utools的高位替代
+- Ventoy
+	- 制作系统盘的最佳选择 常备arch live
+- 1password
+	- 密码管理
+- snipaste
+	- 截图和贴图 快捷键F1和F3
+- scoop
+	- 大家都说这是很棒的windows下面的包管理器 https://scoop.sh/
+	- 安装前可以先 `$env:SCOOP='D:\Scoop` 设置上默认的全局变量
+- altsnap
+	- 鼠标增强软件有点给力的
+- treesize
+	- 定位磁盘占用大的目录
+- Potplayer
+	- 播放器没什么好说的
+- MobaXterm
+	- 现代化的远程连接
+- copyQ
+	-  粘贴板工具 我设置的快捷键是F2
+- TrafficMonitor
+	- 网速和占用快捷查看
+

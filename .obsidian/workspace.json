@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "aeff4ffd2576f01c",
+    "type": "split",
+    "children": [
+      {
+        "id": "6041fbac62870b75",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c4283eef4a47d0e3",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a143dc52a111ffaf",
+    "type": "split",
+    "children": [
+      {
+        "id": "42b57cfd7115774a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32327daeac3ac1cb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "02d31767524bcffb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "75177e1d1f94db54",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 236.5
+  },
+  "right": {
+    "id": "63ab8ea77880dd48",
+    "type": "split",
+    "children": [
+      {
+        "id": "f169a6c23038f4ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "41a7b647ae9d9c26",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d403f16f2b8fe0d4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "99bc9d14d5aea130",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "30928eeb84cfaff9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "random-note:Open random note": false,
+      "audio-recorder:Start/stop recording": false
+    }
+  },
+  "active": "c4283eef4a47d0e3",
+  "lastOpenFiles": [
+    "assets/d1bf0b5093461e7d29346f2715c3bb8d_MD5.png",
+    "01.环境/Linux/Arch/01.安装arch.md",
+    "01.环境/Linux/Arch/03.配置clash.md",
+    "assets/Pasted image 20230510154455.png",
+    "assets/70a34b5810c3fad99d8a8e94945869b9_MD5.png",
+    "assets/14a6141ee8be0345d946f576949489d1_MD5.png",
+    "assets/6f6be08f17e62ba896dd7dadef295894_MD5.png",
+    "assets/4f22498c22242671032312d85df9b7bb_MD5.png",
+    "01.环境/Linux/Arch/02.其他事项.md",
+    "01.环境/Linux/WSL/Untitled.md",
+    "03.后端/Untitled",
+    "04.高级/算法",
+    "04.高级/数据结构",
+    "04.高级",
+    "10.Inbox",
+    "01.环境/Linux/WSL",
+    "assets/Pasted image 20230510155030.png",
+    "Pasted image 20230510154913.png",
+    "Pasted image 20230510154847.png",
+    "assets",
+    "01.环境/software/记录一些win好用的软件.md",
+    "01.环境/Linux/Arch",
+    "01.环境/software",
+    "01.环境/Linux",
+    "前端/Untitled.md",
+    "未命名.canvas"
+  ]
+}

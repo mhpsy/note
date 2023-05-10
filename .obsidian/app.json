@@ -1,0 +1,7 @@
+{
+  "userIgnoreFilters": [
+    "assets/"
+  ],
+  "promptDelete": false,
+  "attachmentFolderPath": "assets"
+}
