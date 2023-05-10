@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04.高级/数据结构/读书笔记/大话数据结构/02.写一个链表.md",
+                "file": "01.环境/software/记录一些win好用的软件.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "新建一个C项目的选择.md",
+                "file": "03.后端/Java/01.Tomcat/01.初识Tomcat.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 306.5110321044922
+    "width": 284.5
   },
   "right": {
     "id": "63ab8ea77880dd48",
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04.高级/数据结构/读书笔记/大话数据结构/02.写一个链表.md",
+                "file": "03.后端/Java/01.Tomcat/01.初识Tomcat.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "04.高级/数据结构/读书笔记/大话数据结构/02.写一个链表.md",
+                "file": "03.后端/Java/01.Tomcat/01.初识Tomcat.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "04.高级/数据结构/读书笔记/大话数据结构/02.写一个链表.md"
+                "file": "03.后端/Java/01.Tomcat/01.初识Tomcat.md"
               }
             }
           }
@@ -161,9 +162,22 @@
       "audio-recorder:Start/stop recording": false
     }
   },
-  "active": "f6adfe671f4d09c7",
+  "active": "6ec190e3b6b49c33",
   "lastOpenFiles": [
+    "03.后端/Java/01.Tomcat/02.创建一个tomcat应用.md",
+    "03.后端/Java/01.Tomcat/01.初识Tomcat.md",
+    "assets/65e9a8d181e2a5b9e04973de9692c3da_MD5.png",
+    "assets/b402e688d3ac16d1d8ad6d963e07792b_MD5.png",
+    "assets/d1e6926028ba17c1bcdf7a7e7b8a8e76_MD5.png",
+    "assets/3d5fe0786219f5daf905280d465aa92a_MD5.png",
+    "assets/f4d63ebc6ded14aea15e4770c5f2c541_MD5.png",
+    "assets/02062cfc7b48c9f2015cbf6b6cb94e66_MD5.png",
+    "assets/c67f03b15c6fb73925250b729b413114_MD5.png",
     "新建一个C项目的选择.md",
+    "01.环境/software/记录一些win好用的软件.md",
+    "03.后端/Java/Java index.md",
+    "03.后端/Java/02.Servlet",
+    "03.后端/Java/01.Tomcat",
     "04.高级/数据结构/读书笔记/大话数据结构/02.写一个链表.md",
     "assets/7101aa72fd40fec340afcc45332b46f4_MD5.png",
     "04.高级/数据结构/读书笔记/大话数据结构.md",
@@ -175,7 +189,6 @@
     "01.环境/Linux/Arch/03.配置clash.md",
     "02.前端/React/React index.md",
     "02.前端/electron/electron index.md",
-    "03.后端/Java/Java index.md",
     "03.后端/Node.js/Node.md",
     "04.高级/数据结构/读书笔记/大话数据结构/答",
     "04.高级/数据结构/读书笔记/大话数据结构",
@@ -184,21 +197,11 @@
     "04.高级/算法/Untitled",
     "03.后端/Node.js",
     "02.前端/Vue/vue index.md",
-    "01.环境/software/记录一些win好用的软件.md",
     "01.环境/Linux/WSL/Untitled.md",
     "assets/d1bf0b5093461e7d29346f2715c3bb8d_MD5.png",
-    "assets/Pasted image 20230510154455.png",
-    "assets/70a34b5810c3fad99d8a8e94945869b9_MD5.png",
-    "assets/14a6141ee8be0345d946f576949489d1_MD5.png",
-    "assets/6f6be08f17e62ba896dd7dadef295894_MD5.png",
-    "assets/4f22498c22242671032312d85df9b7bb_MD5.png",
     "03.后端/Java",
     "04.高级/算法",
     "04.高级/数据结构",
-    "04.高级",
-    "10.Inbox",
-    "assets/Pasted image 20230510155030.png",
-    "Pasted image 20230510154913.png",
     "前端/Untitled.md",
     "未命名.canvas"
   ]
