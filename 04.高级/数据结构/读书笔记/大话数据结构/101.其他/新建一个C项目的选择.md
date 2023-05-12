@@ -1,5 +1,5 @@
 因为如果想写一些"数据结构的话",最好是能用到C语言之类的底层语言,然后我想使用CLion这个软件.
-![](assets/b6be7ed390ee155dd42af2ebab988878_MD5.png)
+![](b6be7ed390ee155dd42af2ebab988878_MD5.png)
 一打开直接蒙蔽了,开始问chatgpt
 ## C++ Executable ,C++ library ,C Executable ,C library的区别
 
@@ -26,7 +26,7 @@
 
 如果选择C Executable还需要在看一下 Language standard的选择
 
-![](assets/7101aa72fd40fec340afcc45332b46f4_MD5.png)
+![](7101aa72fd40fec340afcc45332b46f4_MD5.png)
 
 ## C11 C90 C99 C17 和 C23 的区别
 当您在CLion中创建新的C项目时，您可以选择使用不同的C语言标准，包括C90，C99，C11，C17和C23。在这里，我将为您提供每个标准的详细概述：

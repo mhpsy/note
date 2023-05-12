@@ -3,5 +3,6 @@
     "assets/"
   ],
   "promptDelete": false,
-  "attachmentFolderPath": "assets"
+  "attachmentFolderPath": "assets",
+  "alwaysUpdateLinks": true
 }
