@@ -1,0 +1,947 @@
+
+                <html lang="en" class="simpread-font simpread-theme-root" style='undefined'>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+                        <meta name="author" content="Kenshin"/>
+                        <meta name="description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展" />
+                        <meta name="keywords" content="Chrome extension, Chrome 扩展, 阅读模式, 沉浸式阅读, 简悦, 简阅, read mode, reading mode, reader view, firefox, firefox addon, userscript, safari, opera, tampermonkey"/>
+                        <meta name="thumbnail" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:title" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <meta property="og:type" content="website">
+                        <meta property="og:local" content="zh_CN"/>
+                        <meta property="og:url" content="http://ksria.com/simpread"/>
+                        <meta property="og:image" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:image:type" content="image/png"/>
+                        <meta property="og:image:width" content="960"/>
+                        <meta property="og:image:height" content="355"/>
+                        <meta property="og:site_name" content="http://ksria.com/simpread"/>
+                        <meta property="og:description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <style type="text/css">.simpread-font{font:300 16px/1.8 -apple-system,PingFang SC,Microsoft Yahei,Lantinghei SC,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#333;text-rendering:optimizelegibility;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}.simpread-hidden{display:none}.simpread-read-root{display:-webkit-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;margin:0;top:-1000px;left:0;width:100%;z-index:2147483646;overflow-x:hidden;opacity:0;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}.simpread-read-root-show{top:0}.simpread-read-root-hide{top:1000px}sr-read{display:-webkit-flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column;margin:20px 20%;min-width:400px;min-height:400px;text-align:center}read-process{position:fixed;top:0;left:0;height:3px;width:100%;background-color:#64b5f6;-webkit-transition:width 2s;transition:width 2s;z-index:20000}sr-rd-content-error{display:block;position:relative;margin:0;margin-bottom:30px;padding:25px;background-color:rgba(0,0,0,.05)}sr-rd-footer{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column;font-size:14px}sr-rd-footer,sr-rd-footer-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}sr-rd-footer-group{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-rd-footer-line{width:100%;border-top:1px solid #e0e0e0}sr-rd-footer-text{min-width:150px}sr-rd-footer-copywrite{margin:10px 0 0;color:inherit}sr-rd-footer-copywrite abbr{-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-decoration:none}sr-rd-footer-copywrite .second{margin:10px 0}sr-rd-footer-copywrite .third a:hover{border:none!important}sr-rd-footer-copywrite .third a:first-child{margin-right:50px}sr-rd-footer-copywrite .sr-icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:33px;height:33px;opacity:.8;-webkit-transition:opacity .5s ease;transition:opacity .5s ease;cursor:pointer}sr-rd-footer-copywrite .sr-icon:hover{opacity:1}sr-rd-footer-copywrite a,sr-rd-footer-copywrite a:link,sr-rd-footer-copywrite a:visited{margin:0;padding:0;color:inherit;background-color:transparent;font-size:inherit!important;line-height:normal;text-decoration:none;vertical-align:baseline;vertical-align:initial;border:none!important;box-sizing:border-box}sr-rd-footer-copywrite a:focus,sr-rd-footer-copywrite a:hover,sr-rd-footer a:active{color:inherit;text-decoration:none;border-bottom:1px dotted!important}.simpread-blocks{text-decoration:none!important}.simpread-blocks *{margin:0}.simpread-blocks a{padding:0;text-decoration:none!important}.simpread-blocks img{margin:0;padding:0;border:0;background:transparent;box-shadow:none}.simpread-focus-root{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background-color:hsla(0,0%,92%,.9);z-index:2147483645;opacity:0;-webkit-transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms;transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms}.simpread-focus-highlight{position:relative;box-shadow:0 0 0 20px #fff;background-color:#fff;overflow:visible;z-index:2147483646}.sr-controlbar-bg sr-rd-crlbar,.sr-controlbar-bg sr-rd-crlbar fab{z-index:2147483647}sr-rd-crlbar.controlbar{position:fixed;right:0;bottom:0;width:100px;height:100%;opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}sr-rd-crlbar.controlbar:hover{opacity:1}sr-rd-crlbar fap *{box-sizing:border-box}@media (max-height:620px){fab{zoom:.8}}@media (max-height:783px){dialog-gp dialog-content{max-height:580px}dialog-gp dialog-footer{border-top:1px solid #e0e0e0}}.simpread-highlight-selector{outline:3px dashed #1976d2!important;cursor:pointer!important}.simpread-highlight-controlbar,.simpread-highlight-selector{background-color:#fafafa!important;opacity:.8!important;-webkit-transition:opacity .5s ease!important;transition:opacity .5s ease!important}.simpread-highlight-controlbar{position:relative!important;border:3px dashed #1976d2!important}simpread-highlight,sr-snapshot-ctlbar{position:fixed;top:0;left:0;right:0;padding:15px;height:50px;background-color:rgba(50,50,50,.9);box-shadow:0 2px 5px rgba(0,0,0,.26);box-sizing:border-box;z-index:2147483640}simpread-highlight,sr-highlight-ctl,sr-snapshot-ctlbar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-highlight-ctl{margin:0 5px;width:50px;height:20px;color:#fff;background-color:#1976d2;border-radius:4px;box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);cursor:pointer}toc-bg{position:fixed;left:0;top:0;width:50px;height:200px;font-size:medium}toc-bg:hover{z-index:3}.toc-bg-hidden{opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}.toc-bg-hidden:hover{opacity:1;z-index:3}.toc-bg-hidden:hover toc{width:180px}toc *{all:unset}toc{position:fixed;left:0;top:100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;padding:10px;width:0;max-width:200px;max-height:500px;overflow-x:hidden;overflow-y:hidden;cursor:pointer;border:1px solid hsla(0,0%,62%,.22);-webkit-transition:width .5s;transition:width .5s}toc:hover{overflow-y:auto}toc.mini:hover{width:200px!important}toc::-webkit-scrollbar{width:3px}toc::-webkit-scrollbar-thumb{border-radius:10px;background-color:hsla(36,2%,54%,.5)}toc outline{position:relative;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;padding:2px 0;min-height:21px;line-height:21px;text-align:left}toc outline a,toc outline a:active,toc outline a:focus,toc outline a:visited{display:block;width:100%;color:inherit;font-size:11px;text-decoration:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}toc outline a:hover{font-weight:700!important}toc outline a.toc-outline-theme-dark,toc outline a.toc-outline-theme-night{color:#fff!important}.toc-level-h1{padding-left:5px}.toc-level-h2{padding-left:15px}.toc-level-h3{padding-left:25px}.toc-level-h4{padding-left:35px}.toc-outline-active{border-left:2px solid #f44336}toc outline active{position:absolute;left:0;top:0;bottom:0;padding:0 0 0 3px;border-left:2px solid #e8e8e8}sr-kbd{background:-webkit-gradient(linear,0 0,0 100%,from(#fff785),to(#ffc542));border:1px solid #e3be23;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;position:absolute;left:0;padding:1px 3px 0;font-size:11px!important;font-weight:700;box-shadow:0 3px 7px 0 rgba(0,0,0,.3);overflow:hidden;border-radius:3px}.sr-kbd-a{position:relative}kbd-mapping{position:fixed;left:5px;bottom:5px;-ms-flex-flow:row;flex-flow:row;width:250px;height:500px;background-color:#fff;border:1px solid hsla(0,0%,62%,.22);box-shadow:0 2px 5px rgba(0,0,0,.26);border-radius:3px}kbd-mapping,kbd-maps{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}kbd-maps{margin:40px 0 20px;width:100%;overflow-x:auto}kbd-maps::-webkit-scrollbar-thumb{background-clip:padding-box;border-radius:10px;border:2px solid transparent;background-color:rgba(85,85,85,.55)}kbd-maps::-webkit-scrollbar{width:10px;-webkit-transition:width .7s cubic-bezier(.4,0,.2,1);transition:width .7s cubic-bezier(.4,0,.2,1)}kbd-mapping kbd-map-title{position:absolute;margin:5px 0;width:100%;font-size:14px;font-weight:700}kbd-maps-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}kbd-maps-title{margin:5px 0;padding-left:53px;font-size:12px;font-weight:700}kbd-map kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}kbd-map kbd-name{display:inline-block;text-align:right;width:50px}kbd-map kbd-desc{padding-left:3px}sharecard-bg{position:fixed;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:rgba(0,0,0,.4);z-index:2147483647}sharecard{max-width:450px;background-color:#64b5f6}sharecard,sharecard-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-head{margin:25px;color:#fff;border-radius:10px;box-shadow:0 2px 6px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.15)}sharecard-card{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-card,sharecard-top{display:-webkit-box;display:-ms-flexbox;display:flex}sharecard-top{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:65px;background-color:#fff;color:#878787;font-size:25px;font-weight:500;border-top-left-radius:10px;border-top-right-radius:10px}sharecard-top span.logos{display:block;width:48px;height:48px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAABU1BMVEUAAAAnNJMnNZI3Q5onNJInNJMnNJInNJMnNJI8SJ0tOZY/S55EUKAoNJI6RpwoNJNIU6InNJInNJImNJI7SJwmNJJ2fLUiMJFKVaNCTJ9faK1HUaJOWKVSXaUnNJNYY6pye7cmM5JXYKhwebMjMI8mL4719fW9vb0oNZP/UlLz8/QqN5TAwMAnNJPv7+/Pz8/q6+/p6enNzc3Kysry8vMsOJXc3env7/LU1uXo29vR0dHOzs7ExMTwjo73bW37XV3Aj1TCYELl5u3n5+fW2Obn6O7f4OrZ2+g0QJkxPpgvO5bh4uvS1OTP0ePCwsJQW6ZLVqTs7fHd3d3V1dXqv79VX6lET6A1TIxXUIBSgHxWQnpelHf+WVnopkXqbC7j5Ozi4uLDw8NGUaFATJ9SgH3r6+vGyd7BxNva2trX19ejqM2gpczHx8dze7Zha67Z2dlTgH1aXQeSAAAAJnRSTlMA6ff+497Y8NL+/fv49P379sqab/BeOiX06tzVy8m/tKqpalA7G6oKj0EAAAJlSURBVEjHndNXWxpBFIDhcS2ICRLAkt4Dx4WhLk0E6R0MYoIISrWX5P9f5cwSIRC2+T1czMV5n2FnZwn2eWONUqCAv3H2Uf5Ra1hx4+0WEXtDQW0fCPYJ1EffEfIV4CSROAE4jsePoTFsNmTJF/IeIHF2lgCIn57GodlqDWXBK7IwBYatVlMWFAildPKX7I3m74Z9fsCiQChoimoFQAz04Ad2gH1n9fv9n9hgMNDr9euLWD6fLxQKxaLfb7dTSlahbFVdEPwIQtrAihZQgyKCtCagbQe3xh0QFMgy5MR11+ewYY5/qlZ7vT2xu93ULKjbFLpiUxnIIwjgKmVTLDUFXMrAi2NJWCRLIthTBo4xyOLKpwyqU6CuDCI41hFBCVdOhyLw4FgJ1skCAiyl9BSHbCorgo6VJXTru5hrVCQS8Yr5xLzX59YJSFpVFwD9U0BGC3hGdFpATgRupTGe9R9I1b1ePBvXKDyvq/O/44LT4/E4BUbSCAwj8Evq6HlnOBprx6JhJz8Gktc7xeaP9ndY+0coQvCccFBD4JW60UIY50ciLOAODAQRVOeCHm4Q3Xks6uRDY+CQ+AR4T2wMYh6+jMCIQOp78CFoj0H7EQgIuhI3dGaHCrwgADwCPjJvA372GRigCJg49FUdk3D87pq3zp4SA5zc1Zh9DxfwkpjgUg5Mv+lbeE3McC8Lpu7SA3wk2xzcqL2tN5DfIsQC8HB7UamUy6FQOpTO5QKBQDZbKnWSyUzGjdWCwaDA8+7Le4BNgm3qQGWchYh9s5hNq6wVbBlbwhZYOp3OYOA4zmgEypnM2zj8ByIdedKrH8vDAAAAAElFTkSuQmCC");zoom:.8}sharecard-content{padding:15px;max-height:500px;font-size:20px;text-align:justify;background-color:#2196f3;overflow-x:hidden;overflow-y:auto}sharecard-via{padding:10px;font-size:10px;background-color:#2196f3}sharecard-footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:100px;background-color:#fff;color:#878787;font-size:15px;font-weight:500;border-bottom-left-radius:10px;border-bottom-right-radius:10px}sharecard-footer,sharecard-footer div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sharecard-footer span.qrcode{display:block;width:100px;height:100px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,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")}sharecard-control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0 19px;height:80px;background-color:#fff}simpread-snapshot{width:100%;height:100%;cursor:move;z-index:2147483645}simpread-snapshot,sr-mask{position:fixed;left:0;top:0}sr-mask{background-color:rgba(0,0,0,.1)}.simpread-feedback,.simpread-urlscheme{position:fixed;right:20px;bottom:20px;z-index:2147483646}simpread-feedback,simpread-urlscheme{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding:20px 20px 0;width:500px;color:rgba(51,51,51,.87);background-color:#fff;border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.26);overflow:hidden;-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transition:all .6s ease;transition:all .6s ease}simpread-feedback *,simpread-urlscheme *{font-size:12px!important;box-sizing:border-box}simpread-feedback.active,simpread-urlscheme.active{-webkit-animation-name:srFadeInUp;animation-name:srFadeInUp;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback.hide,simpread-urlscheme.hide{-webkit-animation-name:srFadeInDown;animation-name:srFadeInDown;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback sr-fb-label,simpread-urlscheme sr-urls-label{width:100%}simpread-feedback sr-fb-head,simpread-urlscheme sr-urls-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:5px;width:100%}simpread-feedback sr-fb-content,simpread-urlscheme sr-urls-content{margin-bottom:5px;width:100%}simpread-feedback sr-urls-footer,simpread-urlscheme sr-urls-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-fb-a,simpread-urlscheme sr-urls-a{color:#2163f7;cursor:pointer}simpread-feedback text-field-state,simpread-urlscheme text-field-state{border-top:none rgba(34,101,247,.8)!important;border-left:none rgba(34,101,247,.8)!important;border-right:none rgba(34,101,247,.8)!important;border-bottom:2px solid rgba(34,101,247,.8)!important}simpread-feedback switch,simpread-urlscheme switch{margin-top:0!important}@-webkit-keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}@keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}simpread-feedback sr-fb-head{font-weight:700}simpread-feedback sr-fb-content{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column}simpread-feedback sr-fb-content,simpread-feedback sr-fb-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}simpread-feedback sr-fb-footer{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-close{position:absolute;right:20px;cursor:pointer;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s;z-index:200}simpread-feedback sr-close:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px}simpread-feedback sr-stars i{margin-right:10px;cursor:pointer}simpread-feedback sr-stars i svg{-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}simpread-feedback sr-stars i svg:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars i.active svg{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1)}simpread-feedback sr-emojis{display:block;height:100px;overflow:hidden}simpread-feedback sr-emoji{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:.3s;transition:.3s}simpread-feedback sr-emoji>svg{margin:15px 0;width:70px;height:70px;-ms-flex-negative:0;flex-shrink:0}simpread-feedback sr-stars-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 20px}</style>
+                        <style type="text/css">.simpread-theme-root{font-size:62.5%!important}sr-rd-content,sr-rd-desc,sr-rd-title{width:100%}sr-rd-title{display:-webkit-box;margin:1em 0 .5em;overflow:hidden;text-overflow:ellipsis;text-rendering:optimizelegibility;-webkit-line-clamp:3;-webkit-box-orient:vertical}sr-rd-content{text-align:left;word-break:break-word}sr-rd-desc{text-align:justify;line-height:2.4;margin:0 0 1.2em;box-sizing:border-box}sr-rd-content{font-size:25.6px;font-size:1.6rem;line-height:1.6}sr-rd-content h1,sr-rd-content h1 *,sr-rd-content h2,sr-rd-content h2 *,sr-rd-content h3,sr-rd-content h3 *,sr-rd-content h4,sr-rd-content h4 *,sr-rd-content h5,sr-rd-content h5 *,sr-rd-content h6,sr-rd-content h6 *{word-break:break-all}sr-rd-content div,sr-rd-content p{display:block;float:inherit;line-height:1.6;font-size:25.6px;font-size:1.6rem}sr-rd-content div,sr-rd-content p,sr-rd-content pre,sr-rd-content sr-blockquote{margin:0 0 1.2em;word-break:break-word}sr-rd-content a{padding:0 5px;vertical-align:baseline;vertical-align:initial}sr-rd-content a,sr-rd-content a:link{color:inherit;font-size:inherit;font-weight:inherit;border:none}sr-rd-content a:hover{background:transparent}sr-rd-content img{margin:10px;padding:5px;max-width:100%;background:#fff;border:1px solid #bbb;box-shadow:1px 1px 3px #d4d4d4}sr-rd-content figcaption{text-align:center;font-size:14px}sr-rd-content sr-blockquote{display:block;position:relative;padding:15px 25px;text-align:left;line-height:inherit}sr-rd-content sr-blockquote:before{position:absolute}sr-rd-content sr-blockquote *{margin:0;font-size:inherit}sr-rd-content table{width:100%;margin:0 0 1.2em;word-break:keep-all;word-break:normal;overflow:auto;border:none}sr-rd-content table td,sr-rd-content table th{border:none}sr-rd-content ul{margin:0 0 1.2em;margin-left:1.3em;padding:0;list-style:disc}sr-rd-content ol{list-style:decimal;margin:0;padding:0}sr-rd-content ol li,sr-rd-content ul li{font-size:inherit;list-style:disc;margin:0 0 1.2em}sr-rd-content ol li{list-style:decimal;margin-left:1.3em}sr-rd-content ol li *,sr-rd-content ul li *{margin:0;text-align:left;text-align:initial}sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em}sr-rd-content li ul{list-style:circle}sr-rd-content pre{font-family:Consolas,Monaco,Andale Mono,Source Code Pro,Liberation Mono,Courier,monospace;display:block;padding:15px;line-height:1.5;word-break:break-all;word-wrap:break-word;white-space:pre;overflow:auto}sr-rd-content pre,sr-rd-content pre *,sr-rd-content pre div{font-size:17.6px;font-size:1.1rem}sr-rd-content li pre code,sr-rd-content p pre code,sr-rd-content pre{background-color:transparent;border:none}sr-rd-content pre code{margin:0;padding:0}sr-rd-content pre code,sr-rd-content pre code *{font-size:17.6px;font-size:1.1rem}sr-rd-content pre p{margin:0;padding:0;color:inherit;font-size:inherit;line-height:inherit}sr-rd-content li code,sr-rd-content p code{margin:0 4px;padding:2px 4px;font-size:17.6px;font-size:1.1rem}sr-rd-content mark{margin:0 5px;padding:2px;background:#fffdd1;border-bottom:1px solid #ffedce}.sr-rd-content-img{width:90%;height:auto}.sr-rd-content-img-load{width:48px;height:48px;margin:0;padding:0;border-style:none;border-width:0;background-repeat:no-repeat;background-image:url(data:image/gif;base64,R0lGODlhMAAwAPcAAAAAABMTExUVFRsbGx0dHSYmJikpKS8vLzAwMDc3Nz4+PkJCQkRERElJSVBQUFdXV1hYWFxcXGNjY2RkZGhoaGxsbHFxcXZ2dnl5eX9/f4GBgYaGhoiIiI6OjpKSkpaWlpubm56enqKioqWlpampqa6urrCwsLe3t7q6ur6+vsHBwcfHx8vLy8zMzNLS0tXV1dnZ2dzc3OHh4eXl5erq6u7u7vLy8vf39/n5+f///wEBAQQEBA4ODhkZGSEhIS0tLTk5OUNDQ0pKSk1NTV9fX2lpaXBwcHd3d35+foKCgoSEhIuLi4yMjJGRkZWVlZ2dnaSkpKysrLOzs7u7u7y8vMPDw8bGxsnJydvb293d3eLi4ubm5uvr6+zs7Pb29gYGBg8PDyAgICcnJzU1NTs7O0ZGRkxMTFRUVFpaWmFhYWVlZWtra21tbXNzc3V1dXh4eIeHh4qKipCQkJSUlJiYmJycnKampqqqqrW1tcTExMrKys7OztPT09fX19jY2Ojo6PPz8/r6+hwcHCUlJTQ0NDg4OEFBQU9PT11dXWBgYGZmZm9vb3Jycnp6en19fYCAgIWFhaurq8DAwMjIyM3NzdHR0dTU1ODg4OTk5Onp6fDw8PX19fv7+xgYGB8fHz8/P0VFRVZWVl5eXmpqanR0dImJiaCgoKenp6+vr9/f3+fn5+3t7fHx8QUFBQgICBYWFioqKlVVVWJiYo+Pj5eXl6ioqLa2trm5udbW1vT09C4uLkdHR1FRUVtbW3x8fJmZmcXFxc/Pz42Njb+/v+/v7/j4+EtLS5qamri4uL29vdDQ0N7e3jIyMpOTk6Ojo7GxscLCwisrK1NTU1lZWW5ubkhISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/i1NYWRlIGJ5IEtyYXNpbWlyYSBOZWpjaGV2YSAod3d3LmxvYWRpbmZvLm5ldCkAIfkEAAoA/wAsAAAAADAAMAAABv/AnHBILBqPyKRySXyNSC+mdFqEAAARqpaIux0dVwduq2VJLN7iI3ys0cZkosogIJSKODBAXLzJYjJpcTkuCAIBDTRceg5GNDGAcIM5GwKWHkWMkjk2kDI1k0MzCwEBCTBEeg9cM5AzoUQjAwECF5KaQzWQMYKwNhClBStDjEM4fzGKZCxRRioFpRA2OXlsQrqAvUM300gsCgofr0UWhwMjQhgHBxhjfpCgeDMtLtpCOBYG+g4lvS8JAQZoEHKjRg042GZsylHjBYuHMY7gyHBAn4EDE1ZI8tCAhL1tNLoJsQGDxYoVEJHcOPHAooEEGSLmKKjlWIuHKF/ES0IjxAL/lwxCfFRCwwVKlC4UTomxIYFFaVtKomzBi8yKCetMkKnxEIZIMjdKdBi6ZIYyWAthSZGUVu0RGRsyyJ07V0SoGC3yutCrN40KcIADK6hAlgmLE4hNIF58QlmKBYIDV2g75bBixouVydCAAUOGzp87h6AsBQa9vfTy0uuFA86Y1m5jyyaDQwUJ0kpexMC95AWHBw9YkJlBYoSKs1RmhJDgoIGDDIWN1BZBvUSLr0psmKDgoLuDCSZ4G4FhgrqIESZeFMbBAsOD7g0ifJBxT7wkGyxImB+Bgr7EEA8418ADGrhARAodtKCEDNYRQYNt+wl3RAfNOWBBCr3MkMEEFZxg3YwkLXjQQQg7URPDCSNQN8wRMEggwQjICUECBRNQoIIQKYAAQgpCvOABBx2ksNANLpRQQolFuCBTETBYQOMHaYxwwQV2UVMCkPO1MY4WN3wwwQQWNJPDCJ2hI4QMH3TQQXixsVDBlyNIIiUGZuKopgdihmLDBjVisOWYGFxQJ0MhADkCdnGcQCMFHsZyAQZVDhEikCtOIsMFNXKAHZmQ9kFCBxyAEGNUmFYgIREiTDmoEDCICMKfccQAgghpiRDoqtSkcAKsk7RlK51IiAcLCZ2RMJsWRbkw6rHMFhEEACH5BAAKAP8ALAAAAAAwADAAAAf/gDmCg4SFhoeIiYqLhFhRUViMkpOFEwICE5SahDg4hjgSAQJEh16em4ctRklehkQBAaSFXhMPVaiFVwoGPyeFOK+xp4MkOzoCVLiDL7sGEF2cwbKDW0A6Oj0tyoNOBt5PhUQCwoRL1zpI29QO3gxZhNLDLz7XP1rqg1E/3kmDwLDTcBS5tgMcPkG0vCW4MkjaICoBrgmxgcrFO0NWEnib0OofORtDrvGYcqhTIhcOHIjgYgiJtx9RcuBQEiSIEkFPjOnIZMiGFi3DCiVRQFTClFaDsDDg1UQQDhs2kB4x1uPFrC1ZsrL8tCQIUQVBMLgY9uSBFKSGvEABwoSQFy5Z/7NqgVZqygSvRIU0uSeTrqIuSHF00RI3yxa0iLqIePBVwYMoQSX5LKyF4qQsTIR8NYJYEla5XSIzwnHFSBAGtzZ5IcylsyYvJ564lmz5oO3buAttabKEie/fS5bE3LYFi/Hjx7MgtZKyefMhQzCIpvTiipUr2LNjp8vcuXck0ydVt649O90tTIIrUbKEfXsS4T0jn6+ck0x/8XPr34/Dyon8iRimDhZOFFGBC6hwMcUULfhFCRckGFHEBEUwAeAvLUhxwglUYDFbXRgUMeEEGExxYSFaULHhhlUApQgOLSwh4gQTGCECXyYtMowNL6i44hVcTIcDCRXQOEEFTVg1SPAVT0SSyBZVKClIFy1MIYWGUzhpyBM0FpGEFYhxscQRSKTmiTwkiCBFbTJt4d+GCB6CxRFHROGgTFLQiYQ2OVxBAgkM5ZAFFCKIECgnWVBBBZuFvMBXIVkkcQQGIpwiRXBSOFVFoSRsVYgNd0qCwxMYHJHERTlcykSmgkBYaBUnStICEhhgIMUwly7BqiBXFAoFqurY0ASdS3iaam+75mCDFIWe8KEmVJSKQWqD5JpsDi8QCoWUymwxJgZOMGrtL1QUaqc6WShBJreCjItimlEYi4sWUNxqiLu5WCHvNtPhu98iJ/hG0r+MdGFcqAQTHAgAIfkEAAoA/wAsAAAAADAAMAAACP8AcwgcSLCgwYMIEypcSDALHjxZGEqcWNCNAQNvKGokGCjQQTYX2Ry84XHjQT4a5JQk2CakwRtu1OQxWXCPAwVlqhQMBNJAm5UCoxAIcEAnTYF+bipYU4NjSwNsgP5pEIAon6MD6yjYeqdgzzYF5QgIIAAO1oF/0mxFI4NgT5ED/YypuqDtWYFSFmyVMzDQ06gCA7kZO8DO3YGA2mw1c1Xg24FVxIxFA8hkH7sF9TTY+uZGDr8XweYAhKaqGCoH96BG2CeNmihNOTLZugCFQCYOHDARaGcAWdEEZ2QYIMCoQTlmcrep4nlgljM4RQQGBKi5Bt9j+hAEVAcBgO9ngAb/pnMmt4MzcLQPtMOmiviBN6KU4RuYSoMv3wF8UdN8ZxU35jkQAR0zCHRDZQvVUFIfaoCRHwBk3PEeQTVEoUaAa+AxYUI3xEHAg2HE8cdEM8yBRm5mZNCfRDWQkR8Ya6inEUoOoKGHSXZ88UUDVGzI0A0oSGgSIG/UseJhG/k4kZJIolUHHXQ8CeWUGmIFyB9YZvlHDVuWpMcaa6ihRphgihkHkwr9kcWabLbZ3B5hihnnmGowgWZCM7SpZxYIzkDHHHP8CeigUpzFpZaIirfSnU026ihHexi30QyxHZVFHW9k4IdJNeyhhx8IalSDFHC8YWodjA7Uhx6s7iEDozdU/8HEG26YGoekE/3hKat68FGgQoHwMYeptGogxYiBaXRDFp7mwSqoCAUiRQbEZiBCRAPtIQW2CP2hB2aj+cErq+ASZAexcuwBVA11MJFuXytlgQIezBX0x6qscltQFnDEQUWoA1HBhLvq8YECCurNMC8Km+40wx57HNnQrwXJMMfAUngUSBUiiGBUIHs8REWl2wG8pBRMxDEHZhx7XFINVOCBgrpN9iHHwJK2LGkfD6FA8Vk32DFwHSTrTNANMeOhR6oJ6THwuwQZ3VDP+tL0Bx0D33Gk1H3p8VAVJm8kA9ZyVJ0DFR3jmoPCUox81x94rFYQx3WonYMffIR91IRcPxHKUB522DGT3xIBsqbehCceEAAh+QQACgD/ACwAAAAAMAAwAAAI/wBzCBxIsKDBgwgTKlxI8BIVSZcYSpxIkNMjBQo4UNxYkNNBRxgfHdzkkeNBLB3qlBzIqRFGRwY5OVpEyWRBS4kcPJjU0aUCmAXxIDCggKdNgVkQOXDgSFNFn0AHdkFjgKilowOhLHUgpaBPkQTrVDUwB+vATIuWrsHE8itBLAyqOmBrViCVpYfqEITK8lHVH13rCtz0aCmiqzlahhy4olBVRU45YqFbsBKapZA8KlYAdtOaqoRWHKwkaWVBLG7c4IlMcI6DQw8kCQSxaI0IgSV+VI06EBOHHz9EHwShqDikSaYvKYIdSSAnkiU76GaAheAmKIYECAigyLRzKGuKK/9aMwfLyhKOkCPcJOWBXueS0AgKEECAIEbenU+CFL44IyiZOLcJQ5oMmAMWjAxCn3YMSGEgQprg0Yh4azQyRX4KceIBIdvVR4gHAUqECRSMiNcBhgl1IUSHgzBSHUeWeLAGTSZFIoggaKyAIkObSCLFjgkRJgJrghVpJEeaJaakaV1EIgIUUD4JhQgiUIFVS4dspaUDaCBWSSNugNnImGG6AQKQCnWBgA5stulmczl8KWaYYjZy5lFquqmnDnA2KSWUU05p5VFY4rVllxkeyUlJSaJ5ZF2cWEKJowcVaBYmUngwRxYmbXLJJZk8SJEmVMzBQQcclEApQZlk4eolXVD/tMkkdXRgqwd11MSRJp++egmRCGURiQeocjCHJLEmtqpzXVziahagiloQFR5wcKoHUkQ0EBZUUFbpZBVh8iy0yRqEx6kdQIHYQJpIIUIk6yopECaUTFKJtJuI62q5BWECAgiTAJsDJYBymkMWK6xgcBf1UqJtRbxesiOoB2XipAilCUQJHnjoeuAk9krr3LIsSUJlJCHGybHHmtQ7yYtFXjKlCB6r3HFDIFPCL1ab4EGlFERujEcl1lUCcrxYWRIo0pWs3C/Ik3hrUxclUHlhZU5XhEW995qVSdWRPDyQ0EQX1AXIlQjMUSYrGFUQ2Qc5KzKho3Fc9qMTNY0H0ngrCrRJJqH2LXhCAQEAIfkEAAoA/wAsAAAAADAAMAAACP8AcwgcSLCgwYMIEypcSFBVlTyqGEqcSJBTBwdmPFDcWJDTwVIOHHQ4yMkjx4Op6pwySXBDyFIGvZTS8OJkQRikFFXY0xGkA5gFpxj6ZIaPzYGXcioqxaqiS5EFVyn6ZCgUjKMDTShSNGpKQZ9AB5r6RLYO1oGrNGx1FFEgJ58jB6ZyQFYRjbMDq4zaGokgSDMdTFokC8orXoFePGy1cDUHp6dxc7BoQPZNU46p2hZ8YWHrBy8C4SK2QLYBT4MvWLAsmGpDqRSXB3IytXcUC4GR3rzpm8OEoaEaC9L4QPb2wVO633jYs1rVG50m3HopKbAOqE+hUhFkhcqBge8VVrv/NeEouSNTqVie6MBHvOwqFXg7zqPowHcDCRy5d8znQ/I3GqByl2OgLTSdQKloUMh9BoRyQoEIsVJFB/+Vksd+CXFShyEMGlLHKhPRYIIGydWBIUKriHJfAhpoh5kpjtB0EioHHKCIakd5sceFJ7HSASoQHibkkBx5ZKRjSKJ1gglLMumkCcbZ5MUGolRppZWKNAZDBx2UUkqXXX4ZyYkLsQJKAGimKQCaAqAi0JZfesllmPKdtIoha66ZJptu5rDKFCYw2WSgJ+SB1WNXJpqlQmRuZOSjbhEpqUGcpFJTj2/UEdtJNFRxyimaUWTKF1+YkUKjBrGyRySmtJoCR6t8/wLArAGMcilDXrxgwimtnmLCrRPJ5Mmss3pSyoAIcXLJFLzyGgkLsaFK0AuK8EAsAIVEEiRBe/DaaxXI5pAKC+HGpEq0KTTwBbFfKLKtQFX0ekJ626VwwhQupnpJKpesxkodBxAbyn40oIIKH+++cMK9bV3ywgttsZLKxCAWdIkGnXRSRUI0VCycvSeclgMMeeSRryoTX/JuDnucehILC6fg8bgsNJaDF/umUu5ZqgB6gs0js1AzQaukvPJJXuSxcBWbwsCCyRXtC4Mq0i6UysInXHKT0PkKVPTEm9rEir1Qiud0HkALhDK/VaNYhQlT7Oz00AVJzO/RFK3CR9pvPhndNVo0tG0TyXRPKhHNfxue4Sqr4K244QEBACH5BAAKAP8ALAAAAAAwADAAAAj/AHMIHEiwoMGDCBMqXEhwBgsWNBhKnFjwiRo1pihqLMjpIK2LdA7m6rjxoJYRJkgS/KgmZMFctGZhKVkwy4Y3jnBxZOmS4IpYh2TppClwxs03dDQV/Eihp8BVRxw4UKOF6MAUb7KuIMiJliw1TwqikuqgltWBmjxknRVRYFeQBLXIknpk1dmBlBxlNbHyYtiBtKTGUnF3ICdTR45oyAL4a08XaKRuyFVyRtuaGrI+6fgWrMBcGqRGGFoQF6WEM2jRWUFZbFZHp3OYWLKEb44UQB04FUiDjlQXCG3RnjUCl8ocNJbgJJyDk/OBtWI5oFB1YC4TsgwpULABYQoPS2aF/0dVXaCKJzMRcmLhyJZhFm20bzfk4bhhLLXEi6eVwm5z+yKRlMUSQmyngCEUqAAgQblQ8oR44dFByYIJcTKCAwYqgEYtSkm0Sgq0hDcLKhQilMsi8h3iQXkUzWDCLB4wtpEKZRjyBnBEcWJaiRWacktrhQUpZEmcNefWcwJpsoIKS6rApJMqkEbkLItUaWUbbSxyhIwnmWLKCF6G6aNVmjgAy5kFoHkmLO7l0KWXYIp5C5lmrmnnmW0qCeWTT+JIEydUWiloG1sOuRCSziFp6KKGzSDjRppoMAKQJa1CyS23XEYRKoIIgoaCkGKRgi2ksgCpEAGkWsARUirESRYqkP9KqgosSgQTAq+kGkACHmhqECcOyXpLClgAyeNTrWHRRgG6viKECZQShMUtwlLiH2+4XGtQLiMksIRhKqAhiK6CtLGgC6TessIMxzXIAiUzIPRGKwD44GcOmoxgSK4ByLLgKk5mAaAWD7Hg3yozzODfE/QCoIZ9Rh1wwFYIrdJhQZaysEJ6yGWRRVuaHAIAAGCkcJALzG2ExUOUXEyDx5elAMbIQlx81yoas8Diyx8bpsbIrfx1FycurMCCC5TyrCkuPoyMQK00zWA0RAU52jNBS4wMgCN35eKCxsYVpHTVQIzcQ2xEaULJQ9ryBrNBtbgCwCsmn5VLFlB3fDWDFAwUxihBY297bGGB/31oLiMZrnhBAQEAIfkEAAoA/wAsAAAAADAAMAAACP8AcwgcSLCgwYMIEypcSDCTCxeZGEqcWPDOmzd3KGosyOmgnQtv7Bzk1HHjQVW2qJQk+PGCyII3RPxKZbKgql9MmtAsaOeiCIMs2Ci64KfmwEw4mdy5UVDExZcDWUFSNFSV0YEsmGhlQZDTxzc/CdqiusbW1ah2tIqowfIpQVVvqEJidXbgiyZaqbAEKaIkJxFU2QCrO5CTCa1OLg38CvWFBapOVlLMxNbgJSdaTXT06jYHpyZULbw4mMpFwkwlSrhgWpCK1iajc1D59UtvDhVrqEIdWEOEBAlFDwITIcKOrVSSe+cMVnilCaG+rA68QYUNrwa8miBkYYd4cRURBwb/K7FzZDAmtgW60PCA1/UHvyQTvISiO/E7LOh6ln+QdY7LETSA3QNvsMBfVy+Y4J0dJvhxYEKclCCBe+4pYoJ+DLESzB3epTfRDb5gx0sEv0inUSYq2HGHYhux0B4TsdXESSoxahShCv4RpuOOJpHk2Y+S3eBCMEMGY2SR5dUUAkhv+HKRk29owGImKJhggi1YYnklMA8ydAMbCoQp5gJhLmAbSlnacqWatgxm1JdixlmmbUIaeeSdSW70ly++aNCnn3wywSKPhBZaVyYmanQDEyVgaBIrfgTDQmUamaCLLooYuNENqUjKAjDBUVRDLwaUmoAGeUKoigufAsMCRJuG/7BLqaXuEkJ4CdXwAgutBnNJlwfVwJofGiRAqwEPoJAjQanw6ioLqTjKiirLEnTDHbtoJxAnwCiiC60I+HJgs66+UINknFySSrQC3cDKuQJpMEAACdR4gwkN0GrBgaw8pAp/mazLLidvXHqBQHbMK4AFBqniRJhcIcRKtTncoG4q4XHCCwAA8CIQK70EEIAYKhy0K7AIBZzKrwNt3HFJKoghci+OnsXKupdQqjHHHg9kgQABDLDbWar4sfJKO3dMkB8JiLxAokbVILCjSfc8UBNAB8BEXemm4gfUVUuWSQMi68LcVRavvGzYBZVAgAC6lHwWJ5Qd5LLV01kggZuGehZ2d38oE9YLxxH0LdELdthRo+GM5xAQACH5BAAKAP8ALAAAAAAwADAAAAj/AHMIHEiwoMGDCBMqXEiQGAwYxBhKnFgQhTBhKChqLFjsoIklwkwc7LgRYSZgVw7iuSiSowk7l0oWzFRCBEyDJlga5JMBg5IsMgcSMyFCBAqSA3OGLGjjiRufM4IO5GPHJq6CSvEUlISh6zCpA3OhKGrCBsGcS1oKzLSkqxyzYAVeqiqCEkE8ILUmdeMmg924AotJKloi08CVS/TmyKKk6xOkFInBnRmpqCSSaFsWE9E1CVCDl2AkJCZpWBbIAq8UtfP5SqRIKXNQyvBUrVATfD/vxMMb2AzINohGuhoYqaSeSwwPFJxEkfPHB2Gg4I0HBaWIA2FIioqwGIwnkgji/5JTxLmiIpESZroynfcwXLmWM0Q6t4L5IksooeZ4SRJ1FJLEtBEKbtyHwTCTLZQLDMO0d8V+ChUjjHmM2KGcRsRQggIKF1JESQUVOKGbTJmMSFExeAADIWAstjgRSTBCVkwWD2VBIww3cidTMZEoscQSPgL5oxzcEXPFkUgmSdyOGTgwhANQRvkkMAIZmeSVS5ZUDAZRSjnEEKFQmcOMONqIY406yhQJSBe1CRKRLkq0Ypx0DmRDgic+YUJ8QeWSySWX8KmRJAww4IZ+GxVDzCU2ZpGmRLm4ocCkQixhYkLF2DBDo47iOV8koUw6aSgiYJdQLps2egkxJOXiqUE28P95iRxDiBqEIigIWtCiqmYCmTCFiKArQcWYEMoTBFGCQRC2LgFhiTbOMCwuPejQihsCuWoDScL8YAADI4olgahJdDfDJZ4Wo4gO1iKbgxJBBKGEQCV4a0ASqBEjApRZcgQhCjywOwRcRAQQABHZKmKAAQmIWVAWf2lkgxDsBvBVDrkUfDBJVySwsCLDSvVEK+wWAaPGRCCVxMI/lMDiJT+w60OWKBOUBQMLO/CoTBmwq8MSxBb8CsIEPbGwAU7ERckr7BbSYQ4oQ0YMEQsr0O9GwzDdSnpBG0z0WQgYoEBsUkkSiiKeRl1QLhkwQjZYxYRcDBGvHDzSnC0qUrcieNcLmV0JJYjm9+AGBQQAIfkEAAoA/wAsAAAAADAAMAAACP8AcwgcSLCgwYMIEypcSBCQlmWAGEqcWHAFFBErKGqUKEmECEkHA21MCEhZn4OSLoI0mOzElpEFa7RE9rJgx48Gl8lZcqwmzByAJJ04sUIkwZsrB3qpxYTnn58Dlw09scymx4wEW8hhwuQK1IGBVpyQIsnLUY9Jc9R4whWK2a8C/yAbenIgUoLJuMqpCzdHoBZDkdUYuALtQC20mpYwqhHQ24KAWp5oYfQm1kBSuNLScnBLVYQllW1hPLDP1JrKkCFTJrDPTibJDEbesIHzwWVXcisbTNCLUGSfDV5J/IS3wL9yMCiHglBL7ucQCTp/mlBLiRYEl4lAohwDEimkCdb/gPH8SotljyUy/iMliRs3ymkpC2/wj7Lyyv7QXyhpSXcMS5Q1USBatLBCbjBsFMgTGMCXhBTUNYZbC8ZR1AcSSIgQHEw1RLiRJFfs19eIJKoH1nGkBfLHiiy2WOFIJdAioxwy1vhETV4so+OOPPo0UiBLKCLkkERil4MXD/HYI1RAEulkEUaq2OKUL2oUyAm0HHNMllweI4KHJYYp5k+AMBiRgrUkk56VyRjzxRcijHTFA7wkwdpGfRQBBgB8klGlQl4kwcugEBxjG0N/LOEDn3x6ssSaC12pCC9mUCpBCX8qVQsZjAIAhiJ1eZFpb0ZtcQwElFbqhiT7eaHIF4x+/2EMMozJYUwJkB4nCRvMlbYEnYM+cAx9gTzAKAJPnNnaGAF0ksRxgABilAigKPDAhr4ZQSkvTOwnSSedIOGjX0YIEIAnzAXCxKBMCITMAgoosER4NZQggQQJIpSMkTYVEEAAEJxphAEGsCGQFxjEawxWBS3DF0WAQPBvAQwPbIARRiljRrxG5AoTFJ0IIIAbRgVisREEyRHvAieMuMUCIo+Rr0AnSwdBvBGACdMS/wogR0E1E1RLvAo8AZcyB/xrjIcmE4yxeGzEy8vMMElygACelFBQ0xeHJ0m1vPD70woSdGxQ0AQFIoedIwaSKxsEG2xQICKWiEEBBmAw5kRSSQex4d6ADxQQACH5BAAKAP8ALAAAAAAwADAAAAj/AHMIHEiwoMGDCBMqXEhwE5ctmxhKnFgQFx48lShqlEjpYkaDxTYm3JQly8FKFymBpGSFi8iCmihdoVTDYEc8KgtqseMMlcuXAjdVunIFV0iCNz8OLIbCWc+aQAVyIXrl58CkBf04taM0ajFcRCtFHIgSJ8Eaz5ziGRtVYA2ZV7Qg9Yh0q8m2BLMQpaSJLF2pkZwOO6qxGGGCMYn6ufq32DCnkawS5CIXYTEtWvoa1LL3p94ri3Nk4eksZ0MrIEBsQcilZJYtmpcOpbRa4GFcgZ/FzvHVTocOHPAgrKHFdRYubHNwwQUV4ZZhuAhuQdWMA/Bmw0ZuMa6lxmGGhGtA/5vDwXqHSFm+G9S03XV3kZSe/Lb+hFJyhcWIu65NsRgq83MM0xxFDmF2n0RZNNPMM/y9tMluGhWlHl4UWmYbb7xN+NKEhOGCBi8ghhhiIwdS9BhPKDpjhx2RCRSJDjDGKCMzAxYGQiMX4Ihjjjl+ZIeMQOpAI1DFgMCjjhfk2MhHHooo4iGNaCgRNE5tpSJkkhmGYYYVdumlSJrYkUSJCxWDBzRkTomGIIJEAt8iozQT3UZ+XDBIAHgKUWOZzUzgZxt2NKgQF80QIgCeAhAyR5oHOdbIKH5O0AgeezaECigCHCrAIG2E9iBDmxzFhR1tRDqKEldweIEgmQYgyAPQEP/2xAPPkFnMFY6gQpAfcywyAaSjONPoBIgaYsdufoACywEd2BbqUZE8wMsEldl2hRKQTgDChFYccAAHguaQBCyDHKBrDs4sssgTAkHzwCGHzPFdDXjkeNdB0HQ1kBWEwALLBGM5ooACUfLGAS+HoKGvQFuEppEmE/hbyBUDCUzwQLhEAOKYXaLCjL9JEJbEwI0Q9ESI2VG4BS/+gnJvDhYXzPAEh/CyiGRAzeEvLOwSNPLFBOGBMC924IWLAv4+gLPFjhymSSMgRvCySFYgfYBwBcX83RXSprHwRlcswnHWJIMEQgcOt6WlQTE3+iVCHAwc8tsTaTHMMNXSrbdBAQEAIfkEAAoA/wAsAAAAADAAMAAACP8AcwgcSLCgwYMIEypcSPDGqlWcGEqcWDDLlStZKGqUaPEKlo0bOWXKdBDLFSsfDWJRZgNkwRtasmi5ofJkSoKZUOBRscrlQE4xs5AsaNJjQU5X8OBJ0dKnQBtZovYkWPSmQC1KUWR0KpDTlqhaIg6s2lCFUis0uT6NmmWqQLJjleLZohYn2LQ54OawkUIKnmBiNaYIdhBoVLpvL95UpjSFW4Krhh5U0amTBi0GV7FNu8WSJcRbdOKxZPCGshIlHv8MBaC1rhBNu37VonpgFp0q8ObglAUPFCjOrBy8oehLawBfGqQIbGOLboOZrmAemEkFcGfOoBAeXqvQcQA8FJH/psj8Si3s2FGEVZiplI/vPko9Z2hJCvYQUKRYCrzQkqIAxyVQm0KcqIBeLVfERlEKDXzxhTMgbVELFCpIBpINIbyhIEWWbKUWf3UlxMmIu0VEYogLYaGIKKKsyOKLkICo0RVS1FgjHjbiMZUUAfTo44+gDDhRLaUU2UGRpRzZQUol/OhkAKBsSF4tRxqJZAdLvuUiixO8KAok802ElI1k3uiWiSWSKCOKbLaJ0A0ldBDmQgUC5pQViugSjRQgWaJBBiF4SBEWGiRgQDTRTCMlgRm+8YYGUljIXghBGHBoNEGEMGdCVpTiqKMdqLDoQDfgMQ2iiCaQwU2bkipWJlJo//DpG07YaRAnGegZjQG6KGJFYLVQo8KauwXTAR4EZRFCBqQ4moEUMnLCCKoNlKAbFtOAkmlXuw2EBzWKvDFdV8E0IesbUCCkDBmFOCFpDk2wGwSfOUDxBinp5mAFuIo4AyJfkEAyrkFWKHNQMA2QAQopaXUgjTQx5nCDE4oowojBBn0F0g1vFFJIA1cMVIoZ0pQyFiMVN9GqRiiA4nETgZUijRkmDwRFxWsIV1cmiigciqAdkByxQJlkULEGQmrkjMug5Cvyw0MLlMIaFdPrVBbSeKyIpA6bAUlBNpRSMSmCgqRMKIWAgoJBI5dsUDBrUMOIVS4po0EpMsoMMYicQB7hRNk+nVhQ11/f6uZBTZDcweETbWGFFQMzLvlAAQEAIfkEAAoA/wAsAAAAADAAMAAACP8AcwgcSLCgwYMIEypcSLDYjRvFGEqcWPBPqlR/KGpseOOgRYwbN6oINaFjxYsZDWpJZTLkwGQEALiqZfBjSoJd9kyqBMjlwD2CAAAAclPgR0wGYUyatKelTyRCAXA4CZIgJp2TkPocqAWBUB8wCNpsWGmppYhbBz5pJZQC2hxjuS7d0yUtQUDVhAZINjBujhtYw4bMU+lgMh5Ch/SEi3JgqqWTFhe8URfhpB8/OGgdWIyC0FZPBHbBhKnyH8ipDBZLlUyF5IYTAgR4tcDO60oxWzVCiKlsJadw89gaXlh1GwKyAxCAoOItByC2EwKCUbRLpVvDbd2yhPCGiWqvkg//ciOYssYbMJJlv5V1IaZmhMLPJvTh7UQtKtarSGVfIQw3g4T3SjWVTVTMHtklYwlwDBWjAgQECELTRn/ccgtdWwFihwYMSpQKJv25FKJdCkX01ogkGpSKG9RQ04aLL7Y4S4cTWaLCjTjimMdithjg44+D/CjNaxvdIsKRSCJphxYC9fjjkz6GQiRFxSST5JVLCpRKIy3G2KKMNEpkY4457thQDvahmOKabCp0g5FhJnTgWVtV0sgCDKgQkhbNNGPCZhTxWc0nhLYRp2qozMLBLB8kU+BCgNQCAaGESmOHmgjtccwsis7yRFMlqkDBApRWw0FqaGIq0FtdJPNBp7PU/8LfQcU0wwClC7QxCUEmILFrQjA8oedAmJjQzKIcNMOXahpQGoEtr2lBgTShTGjiQCog0QgHRRVjiQiccnALQpVIM8QTRQl0zBDSSDNuDrZwwIEJAu2hbSP0TpbHMccAWtAe3BlkSQTscqguBRN8sKoIjbihAaoVMbnRDRu0C0FxORwzQcJopaKBG26IcChFI7GrsFoTUHCyQCY00ggSe6TYhRvsyiKxuhsfI9YsbjTSzJQh1WKuNKgUdAzCKwukgsuNLLuVFhOY68ajGW+c9F8f9KxZWpbIMkQowxKkMccFWYKEGxvc7BMMsxwT4thXo2lCliQWM6LGKtPaJkIipA8c2t4T/bHHHv4CbjhBAQEAOw==)}.sr-rd-content-center{text-align:center;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;-webkit-box-orient:vertical}.sr-rd-content-center-small{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.sr-rd-content-center-small img{margin:0;padding:0;border:0;box-shadow:none}img.simpread-img-broken{cursor:pointer}.sr-rd-content-nobeautify{margin:0;padding:0;border:0;box-shadow:0 0 0}sr-rd-mult{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin:0 0 16px;padding:16px 0 24px;width:100%;background-color:#fff;border-radius:4px;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15)}sr-rd-mult:hover{-webkit-transition:all .45s 0ms;transition:all .45s 0ms;box-shadow:1px 1px 8px rgba(0,0,0,.16)}sr-rd-mult sr-rd-mult-content{padding:0 16px;overflow:auto}sr-rd-mult sr-rd-mult-avatar,sr-rd-mult sr-rd-mult-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sr-rd-mult sr-rd-mult-avatar{-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 15px}sr-rd-mult sr-rd-mult-avatar span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;max-width:75px;overflow:hidden;text-overflow:ellipsis;text-align:left;font-size:16px;font-size:1rem}sr-rd-mult sr-rd-mult-avatar img{margin-bottom:0;max-width:50px;max-height:50px;width:50px;height:50px;border-radius:50%}sr-rd-mult sr-rd-mult-content img{max-width:80%}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center{margin:0}sr-page{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%}</style>
+                        <style type="text/css">sr-rd-theme-github{display:none}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{position:relative;margin-top:1em;margin-bottom:1pc;font-weight:700;line-height:1.4;text-align:left;color:#363636}sr-rd-content h1{padding-bottom:.3em;font-size:57.6px;font-size:3.6rem;line-height:1.2}sr-rd-content h2{padding-bottom:.3em;font-size:44.8px;font-size:2.8rem;line-height:1.225}sr-rd-content h3{font-size:38.4px;font-size:2.4rem;line-height:1.43}sr-rd-content h4{font-size:32px;font-size:2rem}sr-rd-content h5,sr-rd-content h6{font-size:25.6px;font-size:1.6rem}sr-rd-content h6{color:#777}sr-rd-content ol,sr-rd-content ul{list-style-type:disc;padding:0;padding-left:2em}sr-rd-content ol ol,sr-rd-content ul ol{list-style-type:lower-roman}sr-rd-content ol ol ol,sr-rd-content ol ul ol,sr-rd-content ul ol ol,sr-rd-content ul ul ol{list-style-type:lower-alpha}sr-rd-content table{width:100%;overflow:auto;word-break:normal;word-break:keep-all}sr-rd-content table th{font-weight:700}sr-rd-content table td,sr-rd-content table th{padding:6px 13px;border:1px solid #ddd}sr-rd-content table tr{background-color:#fff;border-top:1px solid #ccc}sr-rd-content table tr:nth-child(2n){background-color:#f8f8f8}sr-rd-content sr-blockquote{border-left:4px solid #ddd}.simpread-theme-root{background-color:#fff;color:#333}sr-rd-title{font-family:PT Sans,SF UI Display,\.PingFang SC,PingFang SC,Neue Haas Grotesk Text Pro,Arial Nova,Segoe UI,Microsoft YaHei,Microsoft JhengHei,Helvetica Neue,Source Han Sans SC,Noto Sans CJK SC,Source Han Sans CN,Noto Sans SC,Source Han Sans TC,Noto Sans CJK TC,Hiragino Sans GB,sans-serif;font-size:54.4px;font-size:3.4rem;font-weight:700;line-height:1.3}sr-rd-desc{position:relative;margin:0;margin-bottom:30px;padding:25px;padding-left:56px;font-size:28.8px;font-size:1.8rem;color:#777;background-color:rgba(0,0,0,.05);box-sizing:border-box}sr-rd-desc:before{content:"\201C";position:absolute;top:-28px;left:16px;font-size:80px;font-family:Arial;color:rgba(0,0,0,.15)}sr-rd-content,sr-rd-content *,sr-rd-content div,sr-rd-content p{color:#363636;font-weight:400;line-height:1.8}sr-rd-content b *,sr-rd-content strong,sr-rd-content strong * sr-rd-content b{-webkit-animation:none 0s ease 0s 1 normal none running;animation:none 0s ease 0s 1 normal none running;-webkit-backface-visibility:visible;backface-visibility:visible;background:transparent none repeat 0 0/auto auto padding-box border-box scroll;border:medium none currentColor;border-collapse:separate;-o-border-image:none;border-image:none;border-radius:0;border-spacing:0;bottom:auto;box-shadow:none;box-sizing:content-box;caption-side:top;clear:none;clip:auto;color:#000;-webkit-columns:auto;-moz-columns:auto;columns:auto;-webkit-column-count:auto;-moz-column-count:auto;column-count:auto;-webkit-column-fill:balance;-moz-column-fill:balance;column-fill:balance;-webkit-column-gap:normal;-moz-column-gap:normal;column-gap:normal;-webkit-column-rule:medium none currentColor;-moz-column-rule:medium none currentColor;column-rule:medium none currentColor;-webkit-column-span:1;-moz-column-span:1;column-span:1;-webkit-column-width:auto;-moz-column-width:auto;column-width:auto;content:normal;counter-increment:none;counter-reset:none;cursor:auto;direction:ltr;display:inline;empty-cells:show;float:none;font-family:serif;font-size:medium;font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;line-height:normal;height:auto;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;left:auto;letter-spacing:normal;list-style:disc outside none;margin:0;max-height:none;max-width:none;min-height:0;min-width:0;opacity:1;orphans:2;outline:medium none invert;overflow:visible;overflow-x:visible;overflow-y:visible;padding:0;page-break-after:auto;page-break-before:auto;page-break-inside:auto;-webkit-perspective:none;perspective:none;-webkit-perspective-origin:50% 50%;perspective-origin:50% 50%;position:static;right:auto;-moz-tab-size:8;-o-tab-size:8;tab-size:8;table-layout:auto;text-align:left;text-align-last:auto;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;top:auto;-webkit-transform:none;transform:none;-webkit-transform-origin:50% 50% 0;transform-origin:50% 50% 0;-webkit-transform-style:flat;transform-style:flat;-webkit-transition:none 0s ease 0s;transition:none 0s ease 0s;unicode-bidi:normal;vertical-align:baseline;visibility:visible;white-space:normal;widows:2;width:auto;word-spacing:normal;z-index:auto;all:initial}sr-rd-content a,sr-rd-content a:link{color:#4183c4;text-decoration:none}sr-rd-content a:active,sr-rd-content a:focus,sr-rd-content a:hover{color:#4183c4;text-decoration:underline}sr-rd-content pre{background-color:#f7f7f7;border-radius:3px}sr-rd-content li code,sr-rd-content p code{background-color:rgba(0,0,0,.04);border-radius:3px}.simpread-multi-root{background:#f8f9fa}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css">@media (pointer:coarse){sr-read{margin:20px 5%!important;min-width:0!important;max-width:90%!important}sr-rd-title{margin-top:0;font-size:2.7rem}sr-rd-content sr-blockquote,sr-rd-desc{margin:10 0!important;padding:0 0 0 10px!important;width:90%;font-size:1.8rem;font-style:normal;line-height:1.7;text-align:justify}sr-rd-content{font-size:1.75rem;font-weight:300}sr-rd-content figure{margin:0;padding:0;text-align:center}sr-rd-content a,sr-rd-content a:link,sr-rd-content li code,sr-rd-content p code{font-size:inherit}sr-rd-footer{margin-top:20px}sr-blockquote,sr-blockquote *{margin:5px!important;padding:5px!important}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6,sr-rd-title{font-family:PingFang SC,Verdana,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;font-weight:100;line-height:1.35}sr-rd-content-h1,sr-rd-content-h2,sr-rd-content-h3,sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}sr-rd-content-h1,sr-rd-content h1{font-size:1.8em}sr-rd-content-h2,sr-rd-content h2{font-size:1.6em}sr-rd-content-h3,sr-rd-content h3{font-size:1.4em}sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{font-size:1.2em}sr-rd-content-ul,sr-rd-content ul{margin-left:1.3em!important;list-style:disc}sr-rd-content-ol,sr-rd-content ol{list-style:decimal;margin-left:1.9em!important}sr-rd-content-ol ol,sr-rd-content-ol ul,sr-rd-content-ul ol,sr-rd-content-ul ul,sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em!important}sr-rd-content img{margin:0;padding:0;border:0;max-width:100%!important;height:auto;box-shadow:0 20px 20px -10px rgba(0,0,0,.1)}sr-rd-mult{min-width:0;background-color:#fff;box-shadow:0 1px 6px rgba(32,33,36,.28);border-radius:8px}sr-rd-mult sr-rd-mult-avatar div{margin:0}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center-small{margin:7px 0!important}sr-rd-mult sr-rd-mult-avatar span{display:block}sr-rd-mult sr-rd-mult-content{padding-left:0}@media only screen and (max-device-width:1024px){.simpread-theme-root,html.simpread-theme-root{font-size:80%!important}sr-rd-mult sr-rd-mult-avatar img{width:50px;height:50px;min-width:50px;min-height:50px}toc-bg toc{width:10px!important}toc-bg:hover toc{width:auto!important}}@media only screen and (max-device-width:414px){.simpread-theme-root,html.simpread-theme-root{font-size:70%!important}sr-rd-mult sr-rd-mult-avatar img{width:30px;height:30px;min-width:30px;min-height:30px}}@media only screen and (max-device-width:320px){.simpread-theme-root,html.simpread-theme-root{font-size:90%!important}sr-rd-content p{margin-bottom:.5em}}}</style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {}sr-rd-content pre code, sr-rd-content pre code * {}sr-rd-desc {}sr-rd-content pre {}sr-rd-title {}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {
+        font-size: 15px;
+    }
+
+    .annote-perview, .annote-perview * {
+        color: rgb(85, 85, 85);
+        font-weight: 400;
+        line-height: 1.8;
+    }</style>
+                        
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+                        <script>setTimeout(()=>{const e=location.hash.replace("#id=","");let t,a=!1;const n=t=>{for(let n of t){let t;if((t=e.length>6?n.getAttribute("data-id"):n.getAttribute("data-idx"))==e){n.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"}),a=!0;break}}};e&&(0==(t=document.getElementsByClassName("sr-unread-card")).length&&(t=document.getElementsByTagName("sr-annote")),n(t),a||n(t=document.getElementsByClassName("sr-annote")))},500);</script>
+                        
+                        <style>toc a {font-size: inherit!important;font-weight: 300!important;}</style><script>setTimeout(()=>{const max=document.getElementsByTagName('sr-annote-note-tip').length;for(let i=0;i<max;i++){const target=document.getElementsByTagName('sr-annote-note-tip')[i],value=target.dataset.value;value&&(target.innerText=value)}},1000);</script><title>简悦 | 前端程序员是怎么做物联网开发的前端程序员是怎么做物联网开发的</title>
+                    </head>
+                    <body>
+                        <sr-read style='background-color: rgb(34, 34, 34);box-shadow: none;padding: 0!important;'>
+                            <sr-rd-title>前端程序员是怎么做物联网开发的前端程序员是怎么做物联网开发的</sr-rd-title>
+                    <sr-rd-desc style="margin: 0;padding-top: 0;padding-bottom: 0;font-style: normal;font-size: 18px;">前端程序员是怎么做物联网开发的 概述和基础讲解 该项目用到的技术有： 前端：jq、less、echarts、mqtt.js 后端：eggjs、egg-emqtt 数据库：mysql 服务器：emqx（</sr-rd-desc>
+                    <sr-rd-content><h2 data-id="heading-0" id="sr-toc-0">前端程序员是怎么做物联网开发的</h2><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d341236864d04f9c83d88c2d197d3cce~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><sr-blockquote>
+<p>上图是我历时一周做的在线的温湿度可视化项目，可以查看截至目前往前一天的温度、湿度变化趋势，并且实时更新当前温湿度</p>
+<p>本文可能含有知识诅咒</p>
+</sr-blockquote><p></p><h2 data-id="heading-1" id="sr-toc-1">概述和基础讲解</h2><p></p><p>该项目用到的技术有：</p><p></p><ul>
+<li>
+<p>前端：jq、less、echarts、mqtt.js</p>
+</li>
+<li>
+<p>后端：eggjs、egg-emqtt</p>
+</li>
+<li>
+<p>数据库：mysql</p>
+</li>
+<li>
+<p>服务器：emqx（mqtt broker）</p>
+</li>
+<li>
+<p>硬件：</p>
+<ul>
+<li>板子：wemos D1 R2(设计基于 Arduino Uno R3 , 搭载 esp8266 wifi 模块)</li>
+</ul>
+</li>
+<li>
+<p>调试工具：mqttx、Arduino IDE v2.0.3 使用 Arduino C 开发</p>
+</li>
+</ul><p></p><p>必备知识：</p><p></p><ul>
+<li>nodejs（eggjs 框架）能面向业务即可</li>
+<li>mysql 能写基本插入查询语句即可</li>
+<li>C 语言的基本语法了解即可</li>
+<li>知道 mqtt 协议的运作方式即可</li>
+<li>arduino 开发板或任何其他电路板的初步了解即可</li>
+</ul><p></p><p>简单介绍一下上面几个的知识点：</p><p></p><ol start="0">
+<li>
+<p>从来没有后端学习经验的同学，推荐一个全栈项目供你参考：<strong><a href="https://link.juejin.cn?target=https%3A%2F%2Fgitee.com%2FCyan-Xmw%2Fvue-xmw-admin-pro" target="_blank" title="https://gitee.com/Cyan-Xmw/vue-xmw-admin-pro" ref="nofollow noopener noreferrer">vue-xmw-admin-pro</a></strong> ，该项目用到了 前端 VUE、后端 eggjs、mysql、redis，对全栈学习很有帮助。</p>
+</li>
+<li>
+<p>mysql 只需要知道最简单的插入和查询语句即可，在本项目中，其实使用 mongodb 是更合适的，但是我为了方便，直接用了现成的 mysql</p>
+</li>
+<li>
+<p>即使你不知道 C 语言的基本语法，也可以在一小时内快速了解一下，知道简单的定义变量、函数、返回值即可</p>
+</li>
+<li>
+<p>MQTT(消息队列遥测传输) 是一种网络协议（长连接，意思就是除了客户端可以主动向服务器通信外，服务器也可以主动向客户端发起），也是基于 TCP/IP 的，适用于算力低下的硬件设备使用，基于发布 \ 订阅范式的消息协议，具体示例如下：</p>
+<p></p><div class="sr-rd-content-center"><img class="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1d6d184511374dd3a1486f3dc478a0f5~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="width: auto; max-height: 400px;"></div><p></p>
+<p>当某客户端想发布消息时，图大概长这样：</p>
+<p></p><div class="sr-rd-content-center"><img class="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33404e500cb84953bed728900acc1253~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="width: auto; max-height: 400px;"></div><p></p>
+<p>由上图可知，当客户端通过验证上线后，还需要订阅主题，当某客户端向某主题发布消息时，只有订阅了该主题的客户端会收到 broker 的转发。</p>
+<p>举一个简单的例子：你和我，还有他，我们把自己的名字、学号报告给门卫大爷（broker），门卫大爷就同意我们在警卫室玩一会，警卫室有无数块黑板（topic），我们每个人都可以向门卫请求：如果某黑板上被人写了字，请转告给我。门卫会记住每个人的要求，比如当你向一块黑板写了字（你向某 topic 发送了消息），所有要求门卫告诉的人都会被门卫告知你写了什么（如果你也要求被告知，那么也包括你自己）。</p>
+</li>
+<li>
+<p>开发板可以被写入程序，程序可以使用简单的代码控制某个针脚的高低电平，或者读取某针脚的数据。</p>
+</li>
+</ol><p></p><h2 data-id="heading-2" id="sr-toc-2">开始</h2><p></p><ol start="0">
+<li>购买 wemos d1 开发板、DHT11 温湿度传感器，共计 19.3 元。</li>
+<li>使用 arduino ide（以下简称 ide） 对 wemos d1 编程需要下载 esp8266 依赖 参见：<a href="https://link.juejin.cn?target=https%3A%2F%2Farduino.me%2Fa%2Fesp8266" target="_blank" title="https://arduino.me/a/esp8266" ref="nofollow noopener noreferrer"><strong>Arduino IDE 安装 esp8266 SDK</strong></a></li>
+<li>在 ide 的菜单栏选择：文件 &gt; 首选项 &gt; 其他开发板管理器地址填入：<a href="https://link.juejin.cn?target=http%3A%2F%2Farduino.esp8266.com%2Fstable%2Fpackage_esp8266com_index.json" target="_blank" title="http://arduino.esp8266.com/stable/package_esp8266com_index.json" ref="nofollow noopener noreferrer">arduino.esp8266.com/stable/pack…</a>，可以顺便改个中文</li>
+<li>安装 ch340 驱动参见： <a href="https://link.juejin.cn?target=https%3A%2F%2Fblog.csdn.net%2FCreatorGG%2Farticle%2Fdetails%2F108860116" target="_blank" title="https://blog.csdn.net/CreatorGG/article/details/108860116" ref="nofollow noopener noreferrer">win10 安装 CH340 驱动</a> 实测 win11 同样可用</li>
+<li>使用 micro-usb 线，连接电脑和开发板，在 ide 菜单中选择：工具 &gt; 开发板 &gt; esp8266&gt;LOLIN(WEMOS) D1 R2 &amp; mini</li>
+<li>选择端口，按 win+x，打开设备管理器，查看你的 ch340 在哪个端口，在 ide 中选择对应的端口</li>
+<li>当 ide 右下角显示 LOLIN(WEMOS) D1 R2 &amp; mini 在 comXX 上时，连接就成功了</li>
+<li>打开 ide 菜单栏 : 文件 &gt; 示例 &gt; esp8266&gt;blink, 此时 ide 会打开新窗口，在新窗口点击左上角的上传按钮，等待上传完成，当板子上的灯一闪一闪，就表明：环境、设置、板子都没问题，可以开始编程了，如果报错，那么一定是哪一步出问题了，我相信你能够根据错误提示找出到底是什么问题，如果实在找不出问题，那么可能买到了坏的板子（故障率还是蛮高的）</li>
+</ol><p></p><p>wemos d1 针脚中有一个 3.3v 电源输出，三个或更多的 GND 接地口，当安装 DHT11 传感器元件时，需要将正极插入 3.3v 口，负极插入 GND 口，中间的数据线插入随便的数字输入口，比如 D5 口（D5 口的 PIN 值是 14，后面会用到）。</p><p></p><p>使用 DHT11 传感器，需要安装库：DHT sensor library by Adafruit , 在 ide 的左侧栏中的库管理中直接搜索安装即可</p><p></p><p>下面是一个获取 DHT11 数据的简单示例，如果正常的话，在串口监视器中，会每秒输出温湿度数据</p><p></p><pre class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"DHT.h"</span> &nbsp;<span class="hljs-comment">//这是依赖或者叫库，或者叫驱动也行</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"string.h"</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DHTPIN 14 &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// DHT11数据引脚连接到D5引脚 D5引脚的PIN值是14</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DHTTYPE DHT11 &nbsp;<span class="hljs-comment">// 定义DHT11传感器</span></span>
+<span class="hljs-function">DHT <span class="hljs-title">dht</span><span class="hljs-params">(DHTPIN, DHTTYPE)</span></span>; &nbsp;<span class="hljs-comment">//初始化传感器</span>
+​
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+ &nbsp;Serial.begin(<span class="hljs-number">115200</span>);
+ &nbsp;<span class="hljs-comment">//wemos d1 的波特率是 115200</span>
+ &nbsp;pinMode(BUILTIN_LED, OUTPUT); <span class="hljs-comment">//设置一个输出的LED</span>
+ &nbsp;dht.begin(); &nbsp;<span class="hljs-comment">//启动传感器</span>
+}
+​
+<span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">getDHT11Data</span><span class="hljs-params">()</span> </span>{
+ &nbsp;<span class="hljs-keyword">float</span> h = dht.readHumidity(); &nbsp;<span class="hljs-comment">//获取湿度值</span>
+ &nbsp;<span class="hljs-keyword">float</span> t = dht.readTemperature(); <span class="hljs-comment">//获取温度值</span>
+ &nbsp;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> data[<span class="hljs-number">100</span>];
+ &nbsp;<span class="hljs-keyword">if</span> (isnan(h) || isnan(t)) {
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"Failed to read from DHT sensor!"</span>);
+ &nbsp; &nbsp;<span class="hljs-built_in">sprintf</span>(data, <span class="hljs-string">"Temperature: %.1f, Humidity: %.1f"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>); <span class="hljs-comment">//如果任何一个值没有值，直接返回两个0.0，这样我们就知道传感器可能出问题了</span>
+ &nbsp; &nbsp;<span class="hljs-keyword">return</span> data;
+  }
+ &nbsp;<span class="hljs-built_in">sprintf</span>(data, <span class="hljs-string">"Temperature: %.1f, Humidity: %.1f"</span>, t, h); <span class="hljs-comment">//正常就取到值，我这里拼成了一句话</span>
+ &nbsp;<span class="hljs-keyword">return</span> data;
+}
+​
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+ &nbsp;<span class="hljs-keyword">char</span>* data = getDHT11Data(); <span class="hljs-comment">//此处去取传感器值</span>
+ &nbsp;Serial.println(<span class="hljs-string">"got: "</span> + String(data)); &nbsp;<span class="hljs-comment">// 打印主题内容</span>
+ &nbsp;delay(<span class="hljs-number">1000</span>); <span class="hljs-comment">//每次循环延迟一秒</span>
+}</pre><p></p><h2 data-id="heading-3" id="sr-toc-3">继续</h2><p></p><p>到了这一步，如果你用的是普通的 arduino uno r3 板子，就可以结束了。</p><p></p><p>取到数据之后，你就可以根据数据做一些其他的事情了，比如打开接在 d6 引脚上的继电器，而这个继电器控制着一个加湿器。</p><p></p><p>如果你跟我一样，使用了带 wifi 网络的板子，就可以继续跟我做。</p><p></p><p>我们继续分步操作：</p><p></p><h3 data-id="heading-4" id="sr-toc-4">设备端：</h3><p></p><ol start="0">
+<li>
+<p>引入 esp8266 库（上面已经提到安装过程）</p>
+<ol start="0">
+<li>
+<pre class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"ESP8266WiFi.h"</span></span></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>安装 mqtt 客户端库 ，直接在库商店搜索 PubSubClient ，下载 PubSubClient by Nick O'Leary 那一项，下载完成后：</p>
+<ol start="0">
+<li>
+<pre class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"PubSubClient.h"</span></span></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>至此，库文件已全部安装引入完毕</p>
+</li>
+<li>
+<p>设置 wifi ssid（即名字） 和 密码，如：</p>
+<ol start="0">
+<li>
+<pre class="hljs cpp"><span class="hljs-keyword">char</span>* ssid = <span class="hljs-string">"2104"</span>;
+<span class="hljs-keyword">char</span>* passwd = <span class="hljs-string">"13912428897"</span>;</pre>
+</li>
+</ol>
+</li>
+<li>
+<p>尝试连接 wifi</p>
+<ol start="0">
+<li>
+<pre class="hljs cpp">WiFiClient espClient;
+<span class="hljs-keyword">int</span> isConnect = <span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">connectWIFI</span><span class="hljs-params">()</span> </span>{
+ &nbsp;isConnect = <span class="hljs-number">0</span>; 
+ &nbsp;WiFi.mode(WIFI_STA); &nbsp;<span class="hljs-comment">//不知道什么意思，照着写就完了</span>
+ &nbsp;WiFi.begin(ssid, passwd); <span class="hljs-comment">//尝试连接</span>
+ &nbsp;<span class="hljs-keyword">int</span> timeCount = <span class="hljs-number">0</span>; &nbsp;<span class="hljs-comment">//尝试次数</span>
+ &nbsp;<span class="hljs-keyword">while</span> (WiFi.status() != WL_CONNECTED) { <span class="hljs-comment">//如果没有连上，继续循环</span>
+ &nbsp; &nbsp;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">200</span>; i &lt;= <span class="hljs-number">255</span>; i++) {
+ &nbsp; &nbsp; &nbsp;analogWrite(BUILTIN_LED, i);
+ &nbsp; &nbsp; &nbsp;delay(<span class="hljs-number">2</span>);
+ &nbsp;  }
+ &nbsp; &nbsp;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">255</span>; i &gt;= <span class="hljs-number">200</span>; i--) {
+ &nbsp; &nbsp; &nbsp;analogWrite(BUILTIN_LED, i);
+ &nbsp; &nbsp; &nbsp;delay(<span class="hljs-number">2</span>);
+ &nbsp;  }
+ &nbsp; &nbsp;<span class="hljs-comment">// 上两个循环共计200ms左右，在控制LED闪烁而已，你也可以不写</span>
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"wifi connecting......"</span> + String(timeCount));
+ &nbsp; &nbsp;timeCount++;
+ &nbsp; &nbsp;isConnect = <span class="hljs-number">1</span>; <span class="hljs-comment">//每次都需要把连接状态码设置一下，只有连不上时设置为0</span>
+ &nbsp; &nbsp;<span class="hljs-comment">// digitalWrite(BUILTIN_LED, LOW);</span>
+ &nbsp; &nbsp;<span class="hljs-keyword">if</span> (timeCount &gt;= <span class="hljs-number">200</span>) {
+ &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// 当40000毫秒时还没连上，就不连了</span>
+ &nbsp; &nbsp; &nbsp;isConnect = <span class="hljs-number">0</span>; <span class="hljs-comment">//设置状态码为 0</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">break</span>;
+ &nbsp;  }
+  }
+ &nbsp;<span class="hljs-keyword">if</span> (isConnect == <span class="hljs-number">1</span>) {
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"Connect to wifi successfully!"</span> + String(<span class="hljs-string">"SSID is "</span>) + WiFi.SSID());
+ &nbsp; &nbsp;Serial.println(String(<span class="hljs-string">"mac address is "</span>) + WiFi.macAddress());
+ &nbsp; &nbsp;<span class="hljs-comment">// digitalWrite(BUILTIN_LED, LOW);</span>
+ &nbsp; &nbsp;analogWrite(BUILTIN_LED, <span class="hljs-number">250</span>); <span class="hljs-comment">//设置LED常亮，250的亮度对我来说已经很合适了</span>
+ &nbsp; &nbsp;settMqttConfig(); &nbsp;<span class="hljs-comment">//尝试连接mqtt服务器，在下一步有详细代码</span>
+  } <span class="hljs-keyword">else</span> {
+ &nbsp; &nbsp;analogWrite(BUILTIN_LED, <span class="hljs-number">255</span>); <span class="hljs-comment">//设置LED常灭，不要问我为什么255是常灭，因为我的灯是高电平熄灭的</span>
+ &nbsp; &nbsp;<span class="hljs-comment">//连接wifi失败,等待一分钟重连</span>
+ &nbsp; &nbsp;delay(<span class="hljs-number">60000</span>);
+  }
+}</pre>
+</li>
+</ol>
+</li>
+<li>
+<p>尝试连接 mqtt</p>
+<ol start="0">
+<li>
+<pre class="hljs cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* mqtt_server = <span class="hljs-string">"larryblog.top"</span>; &nbsp;<span class="hljs-comment">//这里是我的服务器，当你看到这篇文章的时候，很可能已经没了，因为我的服务器还剩11天到期</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* TOPIC = <span class="hljs-string">"testtopic"</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// 设置信息主题</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* client_id = <span class="hljs-string">"mqttx_3b2687d2"</span>; &nbsp; <span class="hljs-comment">//client_id不可重复，可以随便取，相当于你的网名</span>
+<span class="hljs-function">PubSubClient <span class="hljs-title">client</span><span class="hljs-params">(espClient)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">settMqttConfig</span><span class="hljs-params">()</span> </span>{
+ &nbsp;client.setServer(mqtt_server, <span class="hljs-number">1883</span>); &nbsp;<span class="hljs-comment">//设定MQTT服务器与使用的端口，1883是默认的MQTT端口</span>
+ &nbsp;client.setCallback(onMessage); &nbsp;<span class="hljs-comment">//设置收信函数，当订阅的主题有消息进来时，会进这个函数</span>
+ &nbsp;Serial.println(<span class="hljs-string">"try connect mqtt broker"</span>);
+ &nbsp;client.connect(client_id, <span class="hljs-string">"wemos"</span>, <span class="hljs-string">"aa995231030"</span>); &nbsp;<span class="hljs-comment">//后两个参数是用户名密码</span>
+ &nbsp;client.subscribe(TOPIC); <span class="hljs-comment">//订阅主题</span>
+ &nbsp;Serial.println(<span class="hljs-string">"mqtt connected"</span>); &nbsp;<span class="hljs-comment">//一切正常的话，就连上了</span>
+}
+<span class="hljs-comment">//收信函数</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onMessage</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* topic, byte* payload, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> length)</span> </span>{
+ &nbsp;Serial.print(<span class="hljs-string">"Message arrived ["</span>);
+ &nbsp;Serial.print(topic); &nbsp;<span class="hljs-comment">// 打印主题信息</span>
+ &nbsp;Serial.print(<span class="hljs-string">"]："</span>);
+ &nbsp;<span class="hljs-keyword">char</span>* payloadStr = (<span class="hljs-keyword">char</span>*)<span class="hljs-built_in">malloc</span>(length + <span class="hljs-number">1</span>);
+ &nbsp;<span class="hljs-built_in">memcpy</span>(payloadStr, payload, length);
+ &nbsp;payloadStr[length] = <span class="hljs-string">'\0'</span>;
+ &nbsp;Serial.println(payloadStr); &nbsp;<span class="hljs-comment">// 打印主题内容</span>
+ &nbsp;<span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(payloadStr, (<span class="hljs-keyword">char</span>*)<span class="hljs-string">"getDHTData"</span>) == <span class="hljs-number">0</span>) {
+ &nbsp; &nbsp;<span class="hljs-keyword">char</span>* data = getDHT11Data();
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"got: "</span> + String(data)); &nbsp;<span class="hljs-comment">// 打印主题内容</span>
+ &nbsp; &nbsp;client.publish(<span class="hljs-string">"wemos/dht11"</span>, data);
+  }
+ &nbsp;<span class="hljs-built_in">free</span>(payloadStr); &nbsp;<span class="hljs-comment">// 释放内存</span>
+}</pre>
+</li>
+</ol>
+</li>
+<li>
+<p>发送消息</p>
+<ol start="0">
+<li>
+<pre class="hljs cpp">client.publish(<span class="hljs-string">"home/status/"</span>, <span class="hljs-string">"{device:client_id,'status':'on'}"</span>);
+<span class="hljs-comment">//注意，这里向另外一个主题发送的消息，消息内容就是设备在线，当有其他的客户端（比如web端）订阅了此主题，便能收到此消息</span></pre>
+</li>
+</ol>
+</li>
+</ol><p></p><p>至此，板子上的代码基本上就写完了，完整代码如下：</p><p></p><pre class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"ESP8266WiFi.h"</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"PubSubClient.h"</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"DHT.h"</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"string.h"</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DHTPIN 14 &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// DHT11数据引脚连接到D5引脚</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DHTTYPE DHT11 &nbsp;<span class="hljs-comment">// DHT11传感器</span></span>
+<span class="hljs-function">DHT <span class="hljs-title">dht</span><span class="hljs-params">(DHTPIN, DHTTYPE)</span></span>;
+​
+<span class="hljs-keyword">char</span>* ssid = <span class="hljs-string">"2104"</span>;
+<span class="hljs-keyword">char</span>* passwd = <span class="hljs-string">"13912428897"</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* mqtt_server = <span class="hljs-string">"larryblog.top"</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* TOPIC = <span class="hljs-string">"testtopic"</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// 订阅信息主题</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* client_id = <span class="hljs-string">"mqttx_3b2687d2"</span>;
+<span class="hljs-keyword">int</span> isConnect = <span class="hljs-number">0</span>;
+WiFiClient espClient;
+<span class="hljs-function">PubSubClient <span class="hljs-title">client</span><span class="hljs-params">(espClient)</span></span>;
+<span class="hljs-keyword">long</span> lastMsg = <span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+ &nbsp;Serial.begin(<span class="hljs-number">115200</span>);
+ &nbsp;<span class="hljs-comment">// Set WiFi to station mode</span>
+ &nbsp;connectWIFI();
+ &nbsp;pinMode(BUILTIN_LED, OUTPUT);
+ &nbsp;dht.begin();
+}
+<span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">getDHT11Data</span><span class="hljs-params">()</span> </span>{
+ &nbsp;<span class="hljs-keyword">float</span> h = dht.readHumidity();
+ &nbsp;<span class="hljs-keyword">float</span> t = dht.readTemperature();
+ &nbsp;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> data[<span class="hljs-number">100</span>];
+ &nbsp;<span class="hljs-keyword">if</span> (isnan(h) || isnan(t)) {
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"Failed to read from DHT sensor!"</span>);
+ &nbsp; &nbsp;<span class="hljs-built_in">sprintf</span>(data, <span class="hljs-string">"Temperature: %.1f, Humidity: %.1f"</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>);
+ &nbsp; &nbsp;<span class="hljs-keyword">return</span> data;
+  }
+ &nbsp;<span class="hljs-built_in">sprintf</span>(data, <span class="hljs-string">"Temperature: %.1f, Humidity: %.1f"</span>, t, h);
+ &nbsp;<span class="hljs-keyword">return</span> data;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">connectWIFI</span><span class="hljs-params">()</span> </span>{
+ &nbsp;isConnect = <span class="hljs-number">0</span>;
+ &nbsp;WiFi.mode(WIFI_STA);
+ &nbsp;WiFi.begin(ssid, passwd);
+ &nbsp;<span class="hljs-keyword">int</span> timeCount = <span class="hljs-number">0</span>;
+ &nbsp;<span class="hljs-keyword">while</span> (WiFi.status() != WL_CONNECTED) {
+ &nbsp; &nbsp;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">200</span>; i &lt;= <span class="hljs-number">255</span>; i++) {
+ &nbsp; &nbsp; &nbsp;analogWrite(BUILTIN_LED, i);
+ &nbsp; &nbsp; &nbsp;delay(<span class="hljs-number">2</span>);
+ &nbsp;  }
+ &nbsp; &nbsp;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">255</span>; i &gt;= <span class="hljs-number">200</span>; i--) {
+ &nbsp; &nbsp; &nbsp;analogWrite(BUILTIN_LED, i);
+ &nbsp; &nbsp; &nbsp;delay(<span class="hljs-number">2</span>);
+ &nbsp;  }
+ &nbsp; &nbsp;<span class="hljs-comment">// 上两个循环共计200ms左右</span>
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"wifi connecting......"</span> + String(timeCount));
+ &nbsp; &nbsp;timeCount++;
+ &nbsp; &nbsp;isConnect = <span class="hljs-number">1</span>;
+ &nbsp; &nbsp;<span class="hljs-comment">// digitalWrite(BUILTIN_LED, LOW);</span>
+ &nbsp; &nbsp;<span class="hljs-keyword">if</span> (timeCount &gt;= <span class="hljs-number">200</span>) {
+ &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// 当40000毫秒时还没连上，就不连了</span>
+ &nbsp; &nbsp; &nbsp;isConnect = <span class="hljs-number">0</span>;
+ &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">break</span>;
+ &nbsp;  }
+  }
+ &nbsp;<span class="hljs-keyword">if</span> (isConnect == <span class="hljs-number">1</span>) {
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"Connect to wifi successfully!"</span> + String(<span class="hljs-string">"SSID is "</span>) + WiFi.SSID());
+ &nbsp; &nbsp;Serial.println(String(<span class="hljs-string">"mac address is "</span>) + WiFi.macAddress());
+ &nbsp; &nbsp;<span class="hljs-comment">// digitalWrite(BUILTIN_LED, LOW);</span>
+ &nbsp; &nbsp;analogWrite(BUILTIN_LED, <span class="hljs-number">250</span>);
+ &nbsp; &nbsp;settMqttConfig();
+  } <span class="hljs-keyword">else</span> {
+ &nbsp; &nbsp;analogWrite(BUILTIN_LED, <span class="hljs-number">255</span>);
+ &nbsp; &nbsp;<span class="hljs-comment">//连接wifi失败,等待一分钟重连</span>
+ &nbsp; &nbsp;delay(<span class="hljs-number">60000</span>);
+  }
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">settMqttConfig</span><span class="hljs-params">()</span> </span>{
+ &nbsp;client.setServer(mqtt_server, <span class="hljs-number">1883</span>); &nbsp;<span class="hljs-comment">//设定MQTT服务器与使用的端口，1883是默认的MQTT端口</span>
+ &nbsp;client.setCallback(onMessage);
+ &nbsp;Serial.println(<span class="hljs-string">"try connect mqtt broker"</span>);
+ &nbsp;client.connect(client_id, <span class="hljs-string">"wemos"</span>, <span class="hljs-string">"aa995231030"</span>);
+ &nbsp;client.subscribe(TOPIC);
+ &nbsp;Serial.println(<span class="hljs-string">"mqtt connected"</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onMessage</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* topic, byte* payload, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> length)</span> </span>{
+ &nbsp;Serial.print(<span class="hljs-string">"Message arrived ["</span>);
+ &nbsp;Serial.print(topic); &nbsp;<span class="hljs-comment">// 打印主题信息</span>
+ &nbsp;Serial.print(<span class="hljs-string">"]："</span>);
+ &nbsp;<span class="hljs-keyword">char</span>* payloadStr = (<span class="hljs-keyword">char</span>*)<span class="hljs-built_in">malloc</span>(length + <span class="hljs-number">1</span>);
+ &nbsp;<span class="hljs-built_in">memcpy</span>(payloadStr, payload, length);
+ &nbsp;payloadStr[length] = <span class="hljs-string">'\0'</span>;
+ &nbsp;Serial.println(payloadStr); &nbsp;<span class="hljs-comment">// 打印主题内容</span>
+ &nbsp;<span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(payloadStr, (<span class="hljs-keyword">char</span>*)<span class="hljs-string">"getDHTData"</span>) == <span class="hljs-number">0</span>) {
+ &nbsp; &nbsp;<span class="hljs-keyword">char</span>* data = getDHT11Data();
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"got: "</span> + String(data)); &nbsp;<span class="hljs-comment">// 打印主题内容</span>
+ &nbsp; &nbsp;client.publish(<span class="hljs-string">"wemos/dht11"</span>, data);
+  }
+ &nbsp;<span class="hljs-built_in">free</span>(payloadStr); &nbsp;<span class="hljs-comment">// 释放内存</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">publishDhtData</span><span class="hljs-params">()</span> </span>{
+ &nbsp;<span class="hljs-keyword">char</span>* data = getDHT11Data();
+ &nbsp;Serial.println(<span class="hljs-string">"got: "</span> + String(data)); &nbsp;<span class="hljs-comment">// 打印主题内容</span>
+ &nbsp;client.publish(<span class="hljs-string">"wemos/dht11"</span>, data);
+ &nbsp;delay(<span class="hljs-number">2000</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reconnect</span><span class="hljs-params">()</span> </span>{
+ &nbsp;Serial.print(<span class="hljs-string">"Attempting MQTT connection..."</span>);
+ &nbsp;<span class="hljs-comment">// Attempt to connect</span>
+ &nbsp;<span class="hljs-keyword">if</span> (client.connect(client_id, <span class="hljs-string">"wemos"</span>, <span class="hljs-string">"aa995231030"</span>)) {
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">"reconnected successfully"</span>);
+ &nbsp; &nbsp;<span class="hljs-comment">// 连接成功时订阅主题</span>
+ &nbsp; &nbsp;client.subscribe(TOPIC);
+  } <span class="hljs-keyword">else</span> {
+ &nbsp; &nbsp;Serial.print(<span class="hljs-string">"failed, rc="</span>);
+ &nbsp; &nbsp;Serial.print(client.state());
+ &nbsp; &nbsp;Serial.println(<span class="hljs-string">" try again in 5 seconds"</span>);
+ &nbsp; &nbsp;<span class="hljs-comment">// Wait 5 seconds before retrying</span>
+ &nbsp; &nbsp;delay(<span class="hljs-number">5000</span>);
+  }
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+ &nbsp;<span class="hljs-keyword">if</span> (!client.connected() &amp;&amp; isConnect == <span class="hljs-number">1</span>) {
+ &nbsp; &nbsp;reconnect();
+  }
+ &nbsp;<span class="hljs-keyword">if</span> (WiFi.status() != WL_CONNECTED) {
+ &nbsp; &nbsp;connectWIFI();
+  }
+ &nbsp;client.loop();
+ &nbsp;publishDhtData();
+ &nbsp;<span class="hljs-keyword">long</span> now = millis();
+ &nbsp;<span class="hljs-keyword">if</span> (now - lastMsg &gt; <span class="hljs-number">2000</span>) {
+ &nbsp; &nbsp;lastMsg = now;
+ &nbsp; &nbsp;client.publish(<span class="hljs-string">"home/status/"</span>, <span class="hljs-string">"{device:client_id,'status':'on'}"</span>);
+  }
+ &nbsp;<span class="hljs-comment">// Wait a bit before scanning again</span>
+ &nbsp;delay(<span class="hljs-number">1000</span>);
+}</pre><p></p><h3 data-id="heading-5" id="sr-toc-5">服务器</h3><p></p><p>刚才的一同操作很可能让人一头雾水，相信大家对上面 mqtt 的操作还是一知半解的，不过没有关系，通过对服务端的设置，你会对 mqtt 的机制了解的更加透彻</p><p></p><p>我们需要在服务端部署 mqtt broker，也就是 mqtt 的消息中心服务器</p><p></p><p>在网络上搜索 emqx , 点击 <a href="https://link.juejin.cn?target=https%3A%2F%2Fwww.emqx.io%2Fzh" target="_blank" title="https://www.emqx.io/zh" ref="nofollow noopener noreferrer">EMQX: 大规模分布式物联网 MQTT 消息服务器</a> ，这是一个带有可视化界面的软件，而且画面特别精美，操作特别丝滑，功能相当强大，使用起来基本上没有心智负担。点击立即下载，并选择适合你的服务器系统的版本：</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d3166e30dd5494891603b4d21da6352~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>这里拿 ubuntu 和 windows 说明举例，相信其他系统也都大差不差</p><p></p><p>在 ubuntu 上，推荐使用 apt 下载，按上图步骤操作即可，如中途遇到其他问题，请自行解决</p><p></p><ol start="0">
+<li>sudo ufw status 查看开放端口，一般情况下，你只会看到几个你手动开放过的端口，或者只有 80、443 端口</li>
+<li>udo ufw allow 18083 此端口是 emqx dashboard 使用的端口，开启此端口后，可以在外网访问 emqx 看板控制台</li>
+</ol><p></p><p></p><div class="sr-rd-content-center"><img class="" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/98ed5cbab91f409c864448eaa622c2fc~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div> 当你看到如图所示的画面，说明已经开启成功了<p></p><p></p><p>windows 下直接下载安装包，上传到服务器，双击安装即可</p><p></p><ol start="0">
+<li>打开 “高级安全 Windows Defender 防火墙”，点击入站规则 &gt; 新建规则</li>
+<li>点击端口 &gt; 下一步</li>
+<li>点击 TCP、特定本地端口 、输入 18083，点击下一步</li>
+<li>一直下一步到最后一步，输入名称，推荐输入 emqx 即可</li>
+</ol><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b75c8d8fc5a74ba7836e5ea7a1c2cdba~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>当你看到如图所示画面，说明你已经配置成功了。</p><p></p><p>完成服务端程序安装和防火墙端口配置后，我们需要配置服务器后台的安全策略，这里拿阿里云举例：</p><p></p><p>如果你是 ECS 云主机，点击实例 &gt; 点击你的服务器名 &gt; 安全组 &gt; 配置规则 &gt; 手动添加</p><p></p><p>添加这么一条即可：</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/708dd51235a34fee894b448b9ad4a0a7~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>如果你是轻量服务器，点击安全 &gt; 防火墙 &gt; 添加规则 即可，跟 ECS 设置大差不差。</p><p></p><p>完成后，可以在本地浏览器尝试访问你的 emqx 控制台</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3669feb2f1ab467da94e050f44aada04~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>直接输入域名: 18083 即可，初始用户名为 admin，初始密码为 public, 登录完成后，你便会看到如下画面</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a2f5bd03ff23409daba514e5cfada522~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>接下来需要配置 客户端登录名和密码，比如刚刚在设备中写的用户名密码，就是在这个系统中设置的</p><p></p><p>点击 访问控制 &gt; 认证 &gt; 创建，然后无脑下一步即可，完成后你会看到如下画面</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ab81a249dc3c44318fadc313a0fb3ef1~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>点击用户管理，添加用户即可，用户名和密码都是自定义的，这些用户名密码可以分配给设备端、客户端、服务端、测试端使用，可以参考我的配置</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5e770a45d4eb41fcb14b9aa284c6d180~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>userClient 是准备给前端页面用的 ，server 是给后端用的，995231030 是我个人自留的超级用户，wemos 是设备用的，即上面设备连接时输入的用户名密码。</p><p></p><p>至此，emqx 控制台配置完成。</p><p></p><p>下载 mqttx，作为测试端尝试连接一下</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/97bcd7850e9140bfa802307095d7e458~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>点击连接，你会发现，根本连接不上......</p><p></p><p>因为，1883（mqtt 默认端口）也是没有开启的，当然，和开启 18083 的方法一样。</p><p></p><p>同时，还建议你开启：</p><p></p><ul>
+<li>1803 <a href="https://link.juejin.cn?target=https%3A%2F%2Fcn.bing.com%2Fsearch%3Fq%3Dwebsocket%26FORM%3DAWRE" target="_blank" title="https://cn.bing.com/search?q=websocket&amp;FORM=AWRE" ref="nofollow noopener noreferrer">websocket</a> 默认端口</li>
+<li>1804 websockets 默认端口</li>
+<li>3306 mysql 默认端口</li>
+</ul><p></p><p>后面这四个端口都会用到。</p><p></p><p>当你开启完成后，再次尝试使用 mqttx 连接 broker, 会发现可以连接了</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aac53f2722684e62b6adae9f00729b6b~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>这个页面的功能也是很易懂的，我们在左侧添加订阅，右侧的聊天框里会出现该 topic 的消息</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cec1b6b6c2f443e98aa254dc1667ac5e~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>你是否还记得，在上面的设备代码中，我们在 loop 中每一秒向 home/status/ 发送一条设备在线的提示，我们现在在这里就收到了。</p><p></p><p>当你看到这些消息的时候，就说明，你的设备、服务器、emqx 控制台已经跑通了。</p><p></p><h3 data-id="heading-6" id="sr-toc-6">前后端以及数据库</h3><p></p><h4 data-id="heading-7" id="sr-toc-7">前端</h4><p></p><p>前端不必多说，我们使用 echarts 承载展示数据，由于体量较小，我们不使用任何框架，直接使用 jq 和 echarts 实现，这里主要讲前端怎么连接 mqtt</p><p></p><p>首先引入 mqtt 库</p><p></p><pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.bootcdn.net/ajax/libs/mqtt/4.1.0/mqtt.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></pre><p></p><p>然后设置连接参数</p><p></p><pre class="hljs javascript"><span class="hljs-keyword">const</span> options = {
+ &nbsp; &nbsp;<span class="hljs-attr">clean</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// true: 清除会话, false: 保留会话</span>
+ &nbsp; &nbsp;connectTimeout: <span class="hljs-number">4000</span>, <span class="hljs-comment">// 超时时间</span>
+ &nbsp; &nbsp;clientId: <span class="hljs-string">'userClient_'</span> + generateRandomString(),
+ &nbsp; &nbsp;<span class="hljs-comment">//前端客户端很可能比较多，所以这里我们生成一个随机的6位字母加数字作为clientId，以保证不会重复</span>
+ &nbsp; &nbsp;username: <span class="hljs-string">'userClient'</span>,
+ &nbsp; &nbsp;<span class="hljs-attr">password</span>: <span class="hljs-string">'aa995231030'</span>,
+  }
+ &nbsp; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generateRandomString</span>(<span class="hljs-params"></span>) </span>{
+ &nbsp; &nbsp;<span class="hljs-keyword">let</span> result = <span class="hljs-string">''</span>;
+ &nbsp; &nbsp;<span class="hljs-keyword">let</span> characters = <span class="hljs-string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'</span>;
+ &nbsp; &nbsp;<span class="hljs-keyword">let</span> charactersLength = characters.length;
+ &nbsp; &nbsp;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) {
+ &nbsp; &nbsp; &nbsp;result += characters.charAt(<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * charactersLength));
+ &nbsp;  }
+ &nbsp; &nbsp;<span class="hljs-keyword">return</span> result;
+  }</pre><p></p><p>连接</p><p></p><pre class="hljs cs"><span class="hljs-comment">// const connectUrl = 'mqtt://larryblog.top/mqtt' 当然你可以使用mqtt协议，但是有可能会遇到 ssl 跨域的问题，如果你不使用 https 可以忽略这一项，直接使用mqtt即可</span>
+ &nbsp;<span class="hljs-keyword">const</span> connectUrl = <span class="hljs-string">'wss://larryblog.top/mqtt'</span> <span class="hljs-comment">//注意，这里使用了nginx进行转发，后面会讲</span>
+ &nbsp;<span class="hljs-keyword">const</span> client = mqtt.connect(connectUrl, options)</pre><p></p><p>因为前端代码不多，我这里直接贴了</p><p></p><p>html:</p><p></p><p>index.html</p><p></p><pre class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+​
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet/less"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./style.less"</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//at.alicdn.com/t/c/font_3712319_bzaequy11dn.css"</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.bootcdn.net/ajax/libs/less.js/4.1.3/less.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>wemos d1 test<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+​
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"app"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+ &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"deviceStatus"</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"statusLight"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"statusText"</span>&gt;</span>Loading device status<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-comment">&lt;!-- &lt;span class="iconfont icon-xinxi"&gt;&lt;/span&gt; --&gt;</span>
+ &nbsp; &nbsp;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+ &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Temperature"</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"echartsViewTemperature"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Current temperature:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Temperature"</span>&gt;</span>loading...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"Humidity"</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"echartsViewHumidity"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Current humidity:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Humidity"</span>&gt;</span>loading...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+ &nbsp; &nbsp;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+ &nbsp;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./showTip.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://libs.baidu.com/jquery/2.0.0/jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.bootcdn.net/ajax/libs/mqtt/4.1.0/mqtt.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.staticfile.org/echarts/4.7.0/echarts.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./echarts.js?v=1.0.0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./mqttController.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+​
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></pre><p></p><p>mqttController.js</p><p></p><pre class="hljs javascript"><span class="hljs-comment">// const mqtt = require('mqtt')</span>
+$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+ &nbsp;<span class="hljs-comment">// Welcome to request my open interface. When the device is not online, the latest 2000 pieces of data will be returned</span>
+ &nbsp;$.post(<span class="hljs-string">"https://larryblog.top/api"</span>, {
+ &nbsp; &nbsp;<span class="hljs-attr">topic</span>: <span class="hljs-string">"getWemosDhtData"</span>,
+ &nbsp; &nbsp;<span class="hljs-attr">skip</span>: <span class="hljs-number">0</span>
+  },
+ &nbsp;  (data, textStatus, jqXHR) =&gt; {
+ &nbsp; &nbsp; &nbsp;setData(data.res)
+ &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// console.log("line:77 data==&gt; ", data)</span>
+ &nbsp;  },
+  );
+ &nbsp;<span class="hljs-comment">// for (let i = 0; i &lt;= 10; i++) {</span>
+ &nbsp;<span class="hljs-comment">// &nbsp; toast.showToast(1, "test")</span>
+ &nbsp;<span class="hljs-comment">// }</span>
+ &nbsp;<span class="hljs-keyword">const</span> options = {
+ &nbsp; &nbsp;<span class="hljs-attr">clean</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// true: 清除会话, false: 保留会话</span>
+ &nbsp; &nbsp;connectTimeout: <span class="hljs-number">4000</span>, <span class="hljs-comment">// 超时时间</span>
+ &nbsp; &nbsp;<span class="hljs-comment">// Authentication information</span>
+ &nbsp; &nbsp;clientId: <span class="hljs-string">'userClient_'</span> + generateRandomString(),
+ &nbsp; &nbsp;<span class="hljs-attr">username</span>: <span class="hljs-string">'userClient'</span>,
+ &nbsp; &nbsp;<span class="hljs-attr">password</span>: <span class="hljs-string">'aa995231030'</span>,
+ &nbsp; &nbsp;<span class="hljs-comment">// You are welcome to use my open mqtt broker(My server is weak but come on you). When connecting, remember to give yourself a personalized clientId to prevent being squeezed out</span>
+ &nbsp; &nbsp;<span class="hljs-comment">// Topic rule:</span>
+ &nbsp; &nbsp;<span class="hljs-comment">// baseName/deviceId/events</span>
+  }
+ &nbsp;<span class="hljs-comment">// 连接字符串, 通过协议指定使用的连接方式</span>
+ &nbsp;<span class="hljs-comment">// ws 未加密 WebSocket 连接</span>
+ &nbsp;<span class="hljs-comment">// wss 加密 WebSocket 连接</span>
+ &nbsp;<span class="hljs-comment">// mqtt 未加密 TCP 连接</span>
+ &nbsp;<span class="hljs-comment">// mqtts 加密 TCP 连接</span>
+ &nbsp;<span class="hljs-comment">// wxs 微信小程序连接</span>
+ &nbsp;<span class="hljs-comment">// alis 支付宝小程序连接</span>
+ &nbsp;<span class="hljs-keyword">let</span> timer;
+ &nbsp;<span class="hljs-keyword">let</span> isShowTip = <span class="hljs-number">1</span>
+ &nbsp;<span class="hljs-keyword">const</span> connectUrl = <span class="hljs-string">'wss://larryblog.top/mqtt'</span>
+ &nbsp;<span class="hljs-keyword">const</span> client = mqtt.connect(connectUrl, options)
+ &nbsp;client.on(<span class="hljs-string">'connect'</span>, (error) =&gt; {
+ &nbsp; &nbsp;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'已连接:'</span>, error)
+ &nbsp; &nbsp;toast.showToast(<span class="hljs-string">"Broker Connected"</span>)
+ &nbsp; &nbsp;timer = setTimeout(onTimeout, <span class="hljs-number">3500</span>);
+ &nbsp; &nbsp;<span class="hljs-comment">// 订阅主题</span>
+ &nbsp; &nbsp;client.subscribe(<span class="hljs-string">'wemos/dht11'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+ &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">if</span> (!err) {
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// 发布消息</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;client.publish(<span class="hljs-string">'testtopic'</span>, <span class="hljs-string">'getDHTData'</span>)
+ &nbsp; &nbsp;  }
+ &nbsp;  })
+ &nbsp; &nbsp;client.subscribe(<span class="hljs-string">'home/status/'</span>)
+ &nbsp; &nbsp;client.publish(<span class="hljs-string">'testtopic'</span>, <span class="hljs-string">'Hello mqtt'</span>)
+​
+  })
+ &nbsp;client.on(<span class="hljs-string">'reconnect'</span>, (error) =&gt; {
+ &nbsp; &nbsp;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'正在重连:'</span>, error)
+ &nbsp; &nbsp;toast.showToast(<span class="hljs-number">3</span>, <span class="hljs-string">"reconnecting..."</span>)
+  })
+​
+ &nbsp;client.on(<span class="hljs-string">'error'</span>, (error) =&gt; {
+ &nbsp; &nbsp;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'连接失败:'</span>, error)
+ &nbsp; &nbsp;toast.showToast(<span class="hljs-number">2</span>, <span class="hljs-string">"connection failed"</span>)
+  })
+ &nbsp;client.on(<span class="hljs-string">'message'</span>, (topic, message) =&gt; {
+ &nbsp; &nbsp;<span class="hljs-comment">// console.log('收到消息：', topic, message.toString())</span>
+ &nbsp; &nbsp;<span class="hljs-keyword">switch</span> (topic) {
+ &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">case</span> <span class="hljs-string">"wemos/dht11"</span>:
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">const</span> str = message.toString()
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">const</span> arr = str.split(<span class="hljs-string">", "</span>); <span class="hljs-comment">// 分割字符串</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">const</span> obj = <span class="hljs-built_in">Object</span>.fromEntries(arr.map(<span class="hljs-function"><span class="hljs-params">s</span> =&gt;</span> s.split(<span class="hljs-string">": "</span>))); <span class="hljs-comment">// 转化为对象</span>
+​
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Temperature"</span>).innerHTML = obj.Temperature + <span class="hljs-string">" ℃"</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;optionTemperature.xAxis.data.push(moment().format(<span class="hljs-string">"MM-DD/HH:mm:ss"</span>))
+ &nbsp; &nbsp; &nbsp; &nbsp;optionTemperature.xAxis.data.length &gt;= <span class="hljs-number">100</span> &amp;&amp; optionTemperature.xAxis.data.shift()
+ &nbsp; &nbsp; &nbsp; &nbsp;optionTemperature.series[<span class="hljs-number">0</span>].data.length &gt;= <span class="hljs-number">100</span> &amp;&amp; optionTemperature.series[<span class="hljs-number">0</span>].data.shift()
+ &nbsp; &nbsp; &nbsp; &nbsp;optionTemperature.series[<span class="hljs-number">0</span>].data.push(<span class="hljs-built_in">parseFloat</span>(obj.Temperature))
+ &nbsp; &nbsp; &nbsp; &nbsp;ChartTemperature.setOption(optionTemperature, <span class="hljs-literal">true</span>);
+​
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Humidity"</span>).innerHTML = obj.Humidity + <span class="hljs-string">" %RH"</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;optionHumidity.xAxis.data.push(moment().format(<span class="hljs-string">"MM-DD/HH:mm:ss"</span>))
+ &nbsp; &nbsp; &nbsp; &nbsp;optionHumidity.xAxis.data.length &gt;= <span class="hljs-number">100</span> &amp;&amp; optionHumidity.xAxis.data.shift()
+ &nbsp; &nbsp; &nbsp; &nbsp;optionHumidity.series[<span class="hljs-number">0</span>].data.length &gt;= <span class="hljs-number">100</span> &amp;&amp; optionHumidity.series[<span class="hljs-number">0</span>].data.shift()
+ &nbsp; &nbsp; &nbsp; &nbsp;optionHumidity.series[<span class="hljs-number">0</span>].data.push(<span class="hljs-built_in">parseFloat</span>(obj.Humidity))
+ &nbsp; &nbsp; &nbsp; &nbsp;ChartHumidity.setOption(optionHumidity, <span class="hljs-literal">true</span>);
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">break</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">case</span> <span class="hljs-string">"home/status/"</span>:
+ &nbsp; &nbsp; &nbsp; &nbsp;$(<span class="hljs-string">"#statusText"</span>).text(<span class="hljs-string">"device online"</span>)
+ &nbsp; &nbsp; &nbsp; &nbsp;deviceOnline()
+ &nbsp; &nbsp; &nbsp; &nbsp;$(<span class="hljs-string">".statusLight"</span>).removeClass(<span class="hljs-string">"off"</span>)
+ &nbsp; &nbsp; &nbsp; &nbsp;$(<span class="hljs-string">".statusLight"</span>).addClass(<span class="hljs-string">"on"</span>)
+ &nbsp; &nbsp; &nbsp; &nbsp;clearTimeout(timer);
+ &nbsp; &nbsp; &nbsp; &nbsp;timer = setTimeout(onTimeout, <span class="hljs-number">3500</span>);
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">break</span>
+​
+ &nbsp;  }
+​
+  })
+​
+ &nbsp;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deviceOnline</span>(<span class="hljs-params"></span>) </span>{
+ &nbsp; &nbsp;<span class="hljs-keyword">if</span> (isShowTip) {
+ &nbsp; &nbsp; &nbsp;toast.showToast(<span class="hljs-number">1</span>, <span class="hljs-string">"device online"</span>)
+ &nbsp;  }
+ &nbsp; &nbsp;isShowTip = <span class="hljs-number">0</span>
+  }
+​
+ &nbsp;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setData</span>(<span class="hljs-params">data</span>) </span>{
+ &nbsp; &nbsp;<span class="hljs-comment">// console.log("line:136 data==&gt; ", data)</span>
+ &nbsp; &nbsp;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = data.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+ &nbsp; &nbsp; &nbsp;<span class="hljs-keyword">let</span> item = data[i]
+ &nbsp; &nbsp; &nbsp;<span class="hljs-comment">// console.log("line:138 item==&gt; ", item)</span>
+ &nbsp; &nbsp; &nbsp;optionTemperature.series[<span class="hljs-number">0</span>].data.push(item.temperature)
+ &nbsp; &nbsp; &nbsp;optionHumidity.series[<span class="hljs-number">0</span>].data.push(item.humidity)
+ &nbsp; &nbsp; &nbsp;optionHumidity.xAxis.data.push(moment(item.updateDatetime).format(<span class="hljs-string">"MM-DD/HH:mm:ss"</span>))
+ &nbsp; &nbsp; &nbsp;optionTemperature.xAxis.data.push(moment(item.updateDatetime).format(<span class="hljs-string">"MM-DD/HH:mm:ss"</span>))
+ &nbsp;  }
+ &nbsp; &nbsp;ChartTemperature.setOption(optionTemperature);
+ &nbsp; &nbsp;ChartHumidity.setOption(optionHumidity);
+  }
+​
+ &nbsp;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onTimeout</span>(<span class="hljs-params"></span>) </span>{
+ &nbsp; &nbsp;$(<span class="hljs-string">"#statusText"</span>).text(<span class="hljs-string">"device offline"</span>)
+ &nbsp; &nbsp;toast.showToast(<span class="hljs-number">3</span>, <span class="hljs-string">"device offline"</span>)
+ &nbsp; &nbsp;isShowTip = <span class="hljs-number">1</span>
+ &nbsp; &nbsp;<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Temperature"</span>).innerHTML = <span class="hljs-string">"No data"</span>
+ &nbsp; &nbsp;<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Humidity"</span>).innerHTML = <span class="hljs-string">"No data"</span>
+ &nbsp; &nbsp;$(<span class="hljs-string">".statusLight"</span>).removeClass(<span class="hljs-string">"on"</span>)
+ &nbsp; &nbsp;$(<span class="hljs-string">".statusLight"</span>).addClass(<span class="hljs-string">"off"</span>)
+  }
+​
+ &nbsp;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generateRandomString</span>(<span class="hljs-params"></span>) </span>{
+ &nbsp; &nbsp;<span class="hljs-keyword">let</span> result = <span class="hljs-string">''</span>;
+ &nbsp; &nbsp;<span class="hljs-keyword">let</span> characters = <span class="hljs-string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'</span>;
+ &nbsp; &nbsp;<span class="hljs-keyword">let</span> charactersLength = characters.length;
+ &nbsp; &nbsp;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) {
+ &nbsp; &nbsp; &nbsp;result += characters.charAt(<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * charactersLength));
+ &nbsp;  }
+ &nbsp; &nbsp;<span class="hljs-keyword">return</span> result;
+  }
+});
+​</pre><p></p><p>showTip.js 是我发布在 npm 上的一个包，如果有需要可以自行 npm 下载</p><p></p><p>style.less</p><p></p><pre class="hljs yaml"><span class="hljs-string">*</span> <span class="hljs-string">{</span>
+ &nbsp;<span class="hljs-attr">padding:</span> <span class="hljs-number">0</span><span class="hljs-string">;</span>
+ &nbsp;<span class="hljs-attr">margin:</span> <span class="hljs-number">0</span><span class="hljs-string">;</span>
+ &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-comment">#fff;</span>
+<span class="hljs-string">}</span>
+<span class="hljs-string">​</span>
+<span class="hljs-string">.app</span> <span class="hljs-string">{</span>
+ &nbsp;<span class="hljs-attr">background:</span> <span class="hljs-comment">#1b2028;</span>
+ &nbsp;<span class="hljs-attr">width:</span> <span class="hljs-number">100</span><span class="hljs-string">vw;</span>
+ &nbsp;<span class="hljs-attr">height:</span> <span class="hljs-number">100</span><span class="hljs-string">vh;</span>
+ &nbsp;<span class="hljs-attr">display:</span> <span class="hljs-string">flex;</span>
+ &nbsp;<span class="hljs-attr">flex-direction:</span> <span class="hljs-string">column;</span>
+ &nbsp;<span class="hljs-attr">overflow:</span> <span class="hljs-string">hidden;</span>
+<span class="hljs-string">​</span>
+ &nbsp;<span class="hljs-comment">#deviceStatus {</span>
+ &nbsp; &nbsp;<span class="hljs-attr">display:</span> <span class="hljs-string">flex;</span>
+ &nbsp; &nbsp;<span class="hljs-attr">align-items:</span> <span class="hljs-string">center;</span>
+ &nbsp; &nbsp;<span class="hljs-attr">gap:</span> <span class="hljs-number">10</span><span class="hljs-string">px;</span>
+ &nbsp; &nbsp;<span class="hljs-attr">padding:</span> <span class="hljs-number">20</span><span class="hljs-string">px;</span>
+<span class="hljs-string">​</span>
+ &nbsp; &nbsp;<span class="hljs-string">.statusLight</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">display:</span> <span class="hljs-string">block;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">height:</span> <span class="hljs-number">10</span><span class="hljs-string">px;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">width:</span> <span class="hljs-number">10</span><span class="hljs-string">px;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">border-radius:</span> <span class="hljs-number">100</span><span class="hljs-string">px;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">background:</span> <span class="hljs-comment">#b8b8b8;</span>
+<span class="hljs-string">​</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">&amp;.on</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">background:</span> <span class="hljs-comment">#00a890;</span>
+ &nbsp; &nbsp;  <span class="hljs-string">}</span>
+<span class="hljs-string">​</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">&amp;.off</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">background:</span> <span class="hljs-comment">#b8b8b8;</span>
+ &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp;  <span class="hljs-string">}</span>
+  <span class="hljs-string">}</span>
+<span class="hljs-string">​</span>
+ &nbsp;<span class="hljs-string">.container</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp;<span class="hljs-attr">width:</span> <span class="hljs-number">100</span><span class="hljs-string">%;</span>
+ &nbsp; &nbsp;<span class="hljs-attr">height:</span> <span class="hljs-number">0</span><span class="hljs-string">;</span>
+ &nbsp; &nbsp;<span class="hljs-attr">flex:</span> <span class="hljs-number">1</span><span class="hljs-string">;</span>
+ &nbsp; &nbsp;<span class="hljs-attr">display:</span> <span class="hljs-string">flex;</span>
+<span class="hljs-string">​</span>
+ &nbsp; &nbsp;<span class="hljs-string">@media</span> <span class="hljs-string">screen</span> <span class="hljs-string">and</span> <span class="hljs-string">(max-width:</span> <span class="hljs-number">768</span><span class="hljs-string">px)</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">flex-direction:</span> <span class="hljs-string">column;</span>
+ &nbsp;  <span class="hljs-string">}</span>
+<span class="hljs-string">​</span>
+ &nbsp;  <span class="hljs-string">&gt;div</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">flex:</span> <span class="hljs-number">1</span><span class="hljs-string">;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">height:</span> <span class="hljs-number">100</span><span class="hljs-string">%;</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">text-align:</span> <span class="hljs-string">center;</span>
+<span class="hljs-string">​</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-comment">#echartsViewTemperature,</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-comment">#echartsViewHumidity {</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">width:</span> <span class="hljs-number">80</span><span class="hljs-string">%;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">height:</span> <span class="hljs-number">50</span><span class="hljs-string">%;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">margin:</span> <span class="hljs-number">10</span><span class="hljs-string">px</span> <span class="hljs-string">auto;</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-attr">background:</span> <span class="hljs-comment">#eee;</span>
+ &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp;  <span class="hljs-string">}</span>
+  <span class="hljs-string">}</span>
+<span class="hljs-string">}</span></pre><p></p><p>echarts.js 这个文件是我自己写的，别学我这种命名方式，这是反例</p><p></p><pre class="hljs yaml"><span class="hljs-string">let</span> <span class="hljs-string">optionTemperature</span> <span class="hljs-string">=</span> <span class="hljs-literal">null</span>
+<span class="hljs-string">let</span> <span class="hljs-string">ChartTemperature</span> <span class="hljs-string">=</span> <span class="hljs-literal">null</span>
+<span class="hljs-string">$(document).ready(()</span> <span class="hljs-string">=&gt;</span> <span class="hljs-string">{</span>
+ &nbsp;<span class="hljs-string">setTimeout(()</span> <span class="hljs-string">=&gt;</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-string">waiting</span>
+ &nbsp; &nbsp;<span class="hljs-string">ChartTemperature</span> <span class="hljs-string">=</span> <span class="hljs-string">echarts.init(document.getElementById('echartsViewTemperature'));</span>
+ &nbsp; &nbsp;<span class="hljs-string">ChartHumidity</span> <span class="hljs-string">=</span> <span class="hljs-string">echarts.init(document.getElementById('echartsViewHumidity'));</span>
+ &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-string">指定图表的配置项和数据</span>
+ &nbsp; &nbsp;<span class="hljs-string">optionTemperature</span> <span class="hljs-string">=</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">textStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#fff'</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">tooltip:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">trigger:</span> <span class="hljs-string">'axis'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-attr">transitionDuration:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">backgroundColor:</span> <span class="hljs-string">'#fff'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">textStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">"#333"</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">align:</span> <span class="hljs-string">"left"</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">xAxis:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">min:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">data:</span> <span class="hljs-string">[],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">boundaryGap:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">splitLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">axisLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">lineStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#fff'</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">yAxis:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">splitLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">axisTick:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span> <span class="hljs-string">//</span> <span class="hljs-string">隐藏</span> <span class="hljs-string">y</span> <span class="hljs-string">轴的刻度线</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">axisLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">lineStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#fff'</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">grid:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-string">为了让标尺和提示框在图表外面，需要将图表向外扩展一点</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">left:</span> <span class="hljs-string">'10%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">right:</span> <span class="hljs-string">'5%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">bottom:</span> <span class="hljs-string">'5%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">top:</span> <span class="hljs-string">'5%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">containLabel:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">series:</span> <span class="hljs-string">[{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-attr">clipOverflow:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">name:</span> <span class="hljs-string">'温度'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">type:</span> <span class="hljs-string">'line'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">smooth:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">symbol:</span> <span class="hljs-string">'none'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">data:</span> <span class="hljs-string">[],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">itemStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#00a890'</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">areaStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">type:</span> <span class="hljs-string">'linear'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">x:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">y:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">x2:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">y2:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">colorStops:</span> <span class="hljs-string">[{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">offset:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#00a89066'</span> <span class="hljs-string">//</span> <span class="hljs-number">0</span><span class="hljs-string">%</span> <span class="hljs-string">处的颜色</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">offset:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#00a89000'</span> <span class="hljs-string">//</span> <span class="hljs-number">100</span><span class="hljs-string">%</span> <span class="hljs-string">处的颜色</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">global:</span> <span class="hljs-literal">false</span> <span class="hljs-string">//</span> <span class="hljs-string">缺省为</span> <span class="hljs-literal">false</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">hoverAnimation:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">label:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">markLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">symbol:</span> <span class="hljs-string">['none',</span> <span class="hljs-string">'none'</span><span class="hljs-string">],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">data:</span> <span class="hljs-string">[</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">type:</span> <span class="hljs-string">'average'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">name:</span> <span class="hljs-string">'平均值'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">],</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp;  <span class="hljs-string">}]</span>
+ &nbsp;  <span class="hljs-string">};</span>
+ &nbsp; &nbsp;<span class="hljs-string">optionHumidity</span> <span class="hljs-string">=</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">textStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#fff'</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">tooltip:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">trigger:</span> <span class="hljs-string">'axis'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">backgroundColor:</span> <span class="hljs-string">'#fff'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">textStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">"#333"</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">align:</span> <span class="hljs-string">"left"</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">xAxis:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">min:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">data:</span> <span class="hljs-string">[],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">boundaryGap:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">splitLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">axisTick:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-string">//x轴刻度相关设置</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">alignWithLabel:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">axisLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">lineStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#fff'</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">yAxis:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">splitLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">axisTick:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span> <span class="hljs-string">//</span> <span class="hljs-string">隐藏</span> <span class="hljs-string">y</span> <span class="hljs-string">轴的刻度线</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">axisLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">lineStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#fff'</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">grid:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-string">为了让标尺和提示框在图表外面，需要将图表向外扩展一点</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">left:</span> <span class="hljs-string">'5%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">right:</span> <span class="hljs-string">'5%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">bottom:</span> <span class="hljs-string">'5%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">top:</span> <span class="hljs-string">'5%'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">containLabel:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-attr">toolbox:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> &nbsp; <span class="hljs-attr">feature:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> &nbsp; &nbsp; <span class="hljs-attr">dataZoom:</span> <span class="hljs-string">{},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> &nbsp; &nbsp; <span class="hljs-attr">brush:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> &nbsp; &nbsp; &nbsp; <span class="hljs-attr">type:</span> <span class="hljs-string">['lineX',</span> <span class="hljs-string">'clear'</span><span class="hljs-string">],</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> &nbsp; &nbsp; <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> &nbsp; <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp;<span class="hljs-attr">series:</span> <span class="hljs-string">[{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">clipOverflow:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">name:</span> <span class="hljs-string">'湿度'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">type:</span> <span class="hljs-string">'line'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">smooth:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">symbol:</span> <span class="hljs-string">'none'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">data:</span> <span class="hljs-string">[],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">itemStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#ffa74b'</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">areaStyle:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">type:</span> <span class="hljs-string">'linear'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">x:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">y:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">x2:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">y2:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">colorStops:</span> <span class="hljs-string">[{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">offset:</span> <span class="hljs-number">0</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#ffa74b66'</span> <span class="hljs-string">//</span> <span class="hljs-number">0</span><span class="hljs-string">%</span> <span class="hljs-string">处的颜色</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">offset:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">color:</span> <span class="hljs-string">'#ffa74b00'</span> <span class="hljs-string">//</span> <span class="hljs-number">100</span><span class="hljs-string">%</span> <span class="hljs-string">处的颜色</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">global:</span> <span class="hljs-literal">false</span> <span class="hljs-string">//</span> <span class="hljs-string">缺省为</span> <span class="hljs-literal">false</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">}</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">hoverAnimation:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">label:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">show:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">markLine:</span> <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">symbol:</span> <span class="hljs-string">['none',</span> <span class="hljs-string">'none'</span><span class="hljs-string">],</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">data:</span> <span class="hljs-string">[</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">{</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">type:</span> <span class="hljs-string">'average'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="hljs-attr">name:</span> <span class="hljs-string">'平均值'</span><span class="hljs-string">,</span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp; &nbsp; &nbsp;  <span class="hljs-string">],</span>
+ &nbsp; &nbsp; &nbsp;  <span class="hljs-string">},</span>
+ &nbsp; &nbsp;  <span class="hljs-string">}]</span>
+ &nbsp;  <span class="hljs-string">};</span>
+<span class="hljs-string">​</span>
+ &nbsp; &nbsp;<span class="hljs-string">//</span> <span class="hljs-string">使用刚指定的配置项和数据显示图表。</span>
+ &nbsp; &nbsp;<span class="hljs-string">ChartTemperature.setOption(optionTemperature);</span>
+ &nbsp; &nbsp;<span class="hljs-string">ChartHumidity.setOption(optionHumidity);</span>
+  <span class="hljs-string">},</span> <span class="hljs-number">100</span><span class="hljs-string">)</span>
+<span class="hljs-string">});</span>
+<span class="hljs-string">​</span></pre><p></p><p>当你看到这里，你应该可以在你的前端页面上展示你的板子发来的每一条消息了，但是还远远做不到首图上那种密密麻麻的数据，我并不是把页面开了一天，而是使用了后端和数据库存储了一部分数据。</p><p></p><h4 data-id="heading-8" id="sr-toc-8">后端</h4><p></p><p>后端我们分为了两个部分，一个是 nodejs 的后端程序，一个是 nginx 代理，这里先讲代理，因为上一步前端的连接需要走这个代理</p><p></p><h5 data-id="heading-9">nginx</h5><p></p><p>如果你没有使用 https 连接，那么可以不看本节，直接使用未加密的 mqtt 协议，如果你有自己的域名，且申请了 ssl 证书，那么可以参考我的 nginx 配置，配置如下</p><p></p><pre class="hljs properties"><span class="hljs-attr">http</span> <span class="hljs-string">{</span>
+    <span class="hljs-attr">sendfile</span> <span class="hljs-string">on;</span>
+    <span class="hljs-attr">tcp_nopush</span> <span class="hljs-string">on;</span>
+    <span class="hljs-attr">tcp_nodelay</span> <span class="hljs-string">on;</span>
+    <span class="hljs-attr">keepalive_timeout</span> <span class="hljs-string">65;</span>
+    <span class="hljs-attr">types_hash_max_size</span> <span class="hljs-string">2048;</span>
+    <span class="hljs-attr">include</span> <span class="hljs-string">/etc/nginx/mime.types;</span>
+    <span class="hljs-attr">default_type</span> <span class="hljs-string">application/octet-stream;</span>
+<span class="hljs-attr">​</span>
+<span class="hljs-comment">    ##</span>
+<span class="hljs-comment">    # SSL Settings</span>
+<span class="hljs-comment">    ##</span>
+    <span class="hljs-attr">server</span> <span class="hljs-string">{</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp;listen 80;</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp;server_name jshub.cn;</span>
+<span class="hljs-comment"> &nbsp; &nbsp;#将请求转成https</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp;rewrite ^(.*)$ https://$host$1 permanent;</span>
+    <span class="hljs-attr">}</span>
+    <span class="hljs-attr">server</span> <span class="hljs-string">{</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp;listen 443 ssl;</span>
+                <span class="hljs-attr">server_name</span> <span class="hljs-string">jshub.cn;</span>
+                <span class="hljs-attr">location</span> <span class="hljs-string">/ {</span>
+                    <span class="hljs-attr">root</span> <span class="hljs-string">/larryzhu/web/release/toolbox;</span>
+                    <span class="hljs-attr">index</span> <span class="hljs-string">index.html index.htm;</span>
+                    <span class="hljs-attr">try_files</span> <span class="hljs-string">$uri $uri/ /index.html;</span>
+                <span class="hljs-attr">}</span>
+     <span class="hljs-attr">location</span> <span class="hljs-string">/mqtt {</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp; &nbsp; proxy_pass http://localhost:8083;</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp; &nbsp; proxy_http_version 1.1;</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp; &nbsp; proxy_set_header Upgrade $http_upgrade;</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp; &nbsp; proxy_set_header Connection "upgrade";</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp;     }</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# SSL 协议版本</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp;ssl_protocols TLSv1.2;</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# 证书</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp;ssl_certificate /larryzhu/web/keys/9263126_jshub.cn.pem;</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# 私钥</span>
+ <span class="hljs-meta">&nbsp;</span> <span class="hljs-string">&nbsp; &nbsp; &nbsp;ssl_certificate_key /larryzhu/web/keys/9263126_jshub.cn.key;</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# ssl_ciphers AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256;</span>
+<span class="hljs-attr">​</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# 与False Start没关系，默认此项开启，此处减少抓包的干扰而关闭</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# ssl_session_tickets off;</span>
+<span class="hljs-attr">​</span>
+<span class="hljs-comment"> &nbsp; &nbsp; &nbsp; &nbsp;# return 200 "https ok \n";</span>
+  <span class="hljs-attr">}</span></pre><p></p><p>注意这只是部分配置，切不可全部覆盖你的配置。</p><p></p><p>如果你不会使用 nginx，说明你无需配置 ssl , 直接使用 mqtt 协议即可。</p><p></p><h5 data-id="heading-10">后端程序部分</h5><p></p><p>这里以 egg.js 框架为例</p><p></p><p>首先需要下载 egg.js 的插件 egg-emqtt , 直接使用 npm 下载即可，详细配置和启用方法 参见 <a href="https://juejin.cn/post/6844903735408214024" target="_blank" title="https://juejin.cn/post/6844903735408214024">MQTT 系列实践二 在 EGG 中使用 mqtt</a></p><p></p><p>上面教程的方法并不全面，可以下载我的示例，仿照着写一下，因为内容相对复杂，地址：<a href="https://link.juejin.cn?target=https%3A%2F%2Fgitee.com%2Fzhu_yongbo%2Fmqttineggjs" target="_blank" title="https://gitee.com/zhu_yongbo/mqttineggjs" ref="nofollow noopener noreferrer">gitee.com/zhu_yongbo/…</a></p><p></p><p>其中还包含了 mysql 数据库的连接方法，内有我服务器的地址、mysql 开放端口，用户名以及密码，我服务器还剩不到十天到期，有缘人看到我的文章可以对我的服务器为所欲为，没有什么重要数据。</p><p></p><h4 data-id="heading-11" id="sr-toc-9">mysql</h4><p></p><p>mysql 方面，只需要一个库，一个表即可完成全部工作</p><p></p><p></p><div class="sr-rd-content-center"><img class="sr-rd-content-img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ecf4d8ac82df449a94d5169b2eb212a6~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" style="max-height: 400px;"></div><p></p><p></p><p>如图所示，不复杂，仿照我的建库即可</p><p></p><p>有一点，比较重要，因为 mysql 本身不适用于存储量级太大的数据，我们的数据重复的又比较多，可以考虑一下压缩算法，或者添加一个事件（每次插入时检查数据量是否超过一定值）。像我的板子大概正常累计运行了几天的时间（每两秒一条数据），到目前可以看到已经累计了七十万条数据了，如果不是因为我设置了插入事件，这个数据量已经可以明显影响查询速度了。</p><p></p><p>可以仿照我的事件，语句如下：</p><p></p><pre class="hljs sql">DELIMITER $$
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TRIGGER</span> delete_oldest_data
+<span class="hljs-keyword">AFTER</span> <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">ON</span> wemosd1_dht11
+<span class="hljs-keyword">FOR</span> <span class="hljs-keyword">EACH</span> <span class="hljs-keyword">ROW</span>
+<span class="hljs-keyword">BEGIN</span>
+    <span class="hljs-comment">-- 如果数据量超过43200(每两秒插入一条，这是一天的量)条，调用存储过程删除最早的一条数据</span>
+    <span class="hljs-keyword">IF</span> (<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> wemosd1_dht11) &gt; <span class="hljs-number">43200</span> <span class="hljs-keyword">THEN</span>
+        <span class="hljs-keyword">CALL</span> delete_oldest();
+    <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;
+<span class="hljs-keyword">END</span>$$
+DELIMITER ;
+
+<span class="hljs-comment">-- 创建存储过程</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">PROCEDURE</span> delete_oldest()
+<span class="hljs-keyword">BEGIN</span>
+    <span class="hljs-comment">-- 删除最早的一条数据</span>
+    <span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> wemosd1_dht11 <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">asc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>
+    
+<span class="hljs-keyword">END</span>$$
+DELIMITER ;</pre><p></p><p>BTW：这是 chatGPT 教我的，我只进行了一点小小的修改。</p><p></p><p>这样做会删除 id 比较小的数据，然后就会导致，id 会增长的越来越大，好处是可以看到一共累计了多少条数据。但是如果你不想让 id 累计，那么可以选择重建 id，具体做法，建议你咨询一下 chatGPT</p><p></p><h2 data-id="heading-12" id="sr-toc-10">结语</h2><p></p><p>至此，我们已经完成了前端、后端、设备端三端连通。</p><p></p><p>我们整体梳理一下数据是怎么一步一步来到我们眼前的：</p><p></p><p>首先 wemos d1 开发板会在 DHT11 温湿度传感器上读取温湿度值，然后开发板把数据通过 mqtt 广播给某 topic，我们的前后端都订阅了此 topic，后端收到后，把处理过的数据存入 mysql，前端直接使用 echarts 进行展示，当前端启动时，还可以向后端程序查询历史数据，比如前 8000 条数据，之后的变化由在线的开发板提供，我们就得到了一个实时的，并且能看到历史数据的温湿度在线大屏。</p><p></p><p>如果你觉得牛逼，就给我点个赞吧。</p></sr-rd-content>
+                            
+                            <sr-rd-footer>
+                                <sr-rd-footer-group>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                    <sr-rd-footer-text>全文完</sr-rd-footer-text>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                </sr-rd-footer-group>
+                                <sr-rd-footer-copywrite>
+                                    <div>本文由 <a href="http://ksria.com/simpread" target="_blank">简悦 SimpRead</a> 转码，用以提升阅读体验，<a href="https://juejin.cn/post/7203180003471081531" target="_blank">原文地址 </a></div>
+                                </sr-rd-footer-copywrite>
+                            </sr-rd-footer>
+                        </sr-read>
+                    </body>
+                </html>
