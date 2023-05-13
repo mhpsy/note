@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/05.ServletConfig.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3303ccd856e71648",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/06.ServletContext.md",
+                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/08.HttpServletRequest.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -44,6 +31,7 @@
       {
         "id": "07a0c9fe97554a0c",
         "type": "tabs",
+        "dimension": 74.86725663716814,
         "children": [
           {
             "id": "28489bc7f46e63f2",
@@ -79,6 +67,23 @@
             }
           }
         ]
+      },
+      {
+        "id": "8b5bbd0089c17bff",
+        "type": "tabs",
+        "dimension": 25.13274336283186,
+        "children": [
+          {
+            "id": "d3ca05471a2138df",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/08.HttpServletRequest.md"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/06.ServletContext.md",
+                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/08.HttpServletRequest.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/06.ServletContext.md",
+                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/08.HttpServletRequest.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,19 +136,9 @@
                 "useHierarchy": true
               }
             }
-          },
-          {
-            "id": "d3ca05471a2138df",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/06.ServletContext.md"
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -163,16 +158,24 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "3303ccd856e71648",
+  "active": "cb73103c6c78b056",
   "lastOpenFiles": [
     "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/05.ServletConfig.md",
-    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/06.ServletContext.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/08.HttpServletRequest.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/03.Http",
+    "03.后端/01.Java/Untitled",
+    "03.后端/01.Java/Java index.md",
     "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/07.详细分析HttpServlet.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/06.ServletContext.md",
     "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/04.Servlet的生命周期.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/03.访问Servlet的过程.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/02.新建一个Servlet.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/01.初识Servlet.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/01.Tomcat/02.创建一个tomcat应用.md",
+    "03.后端/01.Java/01.Tomcat&Servlet/01.Tomcat/01.初识Tomcat.md",
     "03.后端/01.Java/01.Tomcat&Servlet/assets/dd334e8f6a35c9e901d69af27c6a05e1_MD5.png",
     "03.后端/01.Java/01.Tomcat&Servlet/assets/1d91340fc9db20d1224fd381432b0331_MD5.png",
     "03.后端/01.Java/01.Tomcat&Servlet/assets/36ae2e8b196526cb30ad236a360d0226_MD5.png",
-    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/03.访问Servlet的过程.md",
     "05.开发/01.微信相关/01.微信H5开发/01.获取用户openId和userinfo.md",
     "01.操作系统/01.Linux/03.softwareTip/01.curl和一些注意事项.md",
     "05.开发/01.微信相关/02.微信小程序/微信小程序.md",
@@ -192,23 +195,16 @@
     "03.后端/01.Java/01.Tomcat&Servlet/assets/c3fb924ff911024c1bf11d3841894d5c_MD5.webp",
     "10.Inbox/6-前端程序员是怎么做物联网开发的前端程序员是怎么做物联网开发的.html",
     "10.Inbox/6-十分钟，带你了解 Vue3 的新写法@annote.md",
-    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/02.新建一个Servlet.md",
     "10.Inbox/6-十分钟，带你了解 Vue3 的新写法@annote.html",
     "10.Inbox/6-十分钟，带你了解 Vue3 的新写法.html",
     "10.Inbox/急急急急急，大家买的是数字版还是卡带？卡带发货了吗？（不引战） - V2EX/急急急急急，大家买的是数字版还是卡带？卡带发货了吗？（不引战） - V2EX.md",
     "10.Inbox/急急急急急，大家买的是数字版还是卡带？卡带发货了吗？（不引战） - V2EX",
-    "03.后端/01.Java/01.Tomcat&Servlet/02.Servlet/01.初识Servlet.md",
     "01.环境/01.Linux/00.shell/assets",
-    "01.环境/01.Linux/00.shell",
-    "01.环境/01.Linux",
-    "03.后端/01.Java/01.Tomcat&Servlet/01.Tomcat/01.初识Tomcat.md",
-    "03.后端/01.Java/01.Tomcat&Servlet/01.Tomcat/02.创建一个tomcat应用.md",
     "04.高级/音视频/FFmpeg.md",
     "01.操作系统/02.software/01.记录一些win好用的软件.md",
     "05.开发/01.微信相关/101.其他/设置网页授权回调域名.md",
     "05.开发/01.微信相关/101.其他/两种scope的区别.md",
     "04.高级/数据结构/数据结构.md",
-    "03.后端/01.Java/Java index.md",
     "01.操作系统/01.Linux/01.Arch/01.安装arch.md"
   ]
 }
