@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue/index.js"></script>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+
+    const {compile, createApp} = Vue
+
+    const htmlStr = `
+    <div>compile</div>
+    `
+
+    const renderFn = compile(htmlStr)
+    console.log(renderFn.toString())
+    createApp({
+        render: renderFn,
+    }).mount("#app")
+</script>
+
+</body>
+</html>
